@@ -629,7 +629,7 @@ body {
   float: left;
   font-size: 18px;
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 900;
   padding: 10px 15px;
 }
 #masthead .site-title a {
@@ -641,12 +641,13 @@ body {
   display: none;
 }
 
-#home-cover {
+.page-header {
   position: relative;
   text-align: center;
-  padding: 55px 10px 70px;
+  padding: 60px 10px 70px;
+  border-bottom: 1px solid #EFEFEF;
 }
-#home-cover .background {
+.page-header .background {
   background: #F2E6D7;
   content: '';
   position: absolute;
@@ -657,22 +658,27 @@ body {
   z-index: 1;
   opacity: .3;
 }
-#home-cover .site-title,
-#home-cover .site-description {
+.page-header .page-title,
+.page-header .page-description {
   position: relative;
   z-index: 20;
 }
-#home-cover .site-title {
+.page-header .page-title {
   font-size: 28px;
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 900;
   color: #505050;
 }
-#home-cover .site-description {
+.page-header .page-description {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: lighter;
   color: #B9B1AF;
+}
+
+.home .page-header {
+  border: none;
+  padding-top: 55px;
 }
 
 /*--------------------------------------------------------------

@@ -30,7 +30,7 @@ get_header(); ?>
 							printf( __( 'Day: %s', 'cinnamon' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'cinnamon' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cinnamon' ) ) . '</span>' );
+							printf( __( '%s', 'cinnamon' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cinnamon' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
 							printf( __( 'Year: %s', 'cinnamon' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cinnamon' ) ) . '</span>' );
@@ -72,7 +72,7 @@ get_header(); ?>
 					// Show an optional term description.
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+						printf( '<div class="page-description">%s</div>', $term_description );
 					endif;
 				?>
 			</header><!-- .page-header -->

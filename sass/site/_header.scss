@@ -10,7 +10,7 @@ body{
 	.site-title{
 		float:left;
 		@include font-size( 1.8 );
-		font-weight: bold;
+		font-weight: 900;
 		padding: 10px 15px;
 
 		a{
@@ -24,10 +24,11 @@ body{
 	display: none;
 }
 
-#home-cover{
+.page-header{
 	position: relative;
 	text-align: center;
-	padding: 55px 10px 70px;
+	padding: 60px 10px 70px;
+	border-bottom: 1px solid $color__border;
 
 	.background{
 		background: $color__accent;
@@ -41,21 +42,26 @@ body{
 		opacity: .3;
 	}
 
-	.site-title,
-	.site-description{
+	.page-title,
+	.page-description{
 		position: relative;
 		z-index: 20;
 	}
 
-	.site-title{
+	.page-title{
 		@include font-size( 2.8 );
-		font-weight: bold;
+		font-weight: 900;
 		color: $color__text-title;
 	}
 
-	.site-description{
+	.page-description{
 		@include font-size( 1.8 );
 		font-weight: lighter;
 		color: $color__text-light;
 	}
+}
+
+.home .page-header{
+	border: none;
+	padding-top: 55px;
 }

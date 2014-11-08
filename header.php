@@ -36,10 +36,10 @@ global $paged;
 	
 	<?php if( is_home() && 0 == $paged  ) : ?>
 
-	<div id="home-cover">
+	<div class="page-header">
 		<div class="background"></div>
-		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<h1 class="page-title"><?php bloginfo( 'name' ); ?></h1>
+		<h2 class="page-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- #home-cover -->
 
 	<?php endif; ?>
