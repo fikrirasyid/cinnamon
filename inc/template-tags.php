@@ -74,8 +74,8 @@ function cinnamon_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cinnamon' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'cinnamon' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'cinnamon' ) );
+				previous_post_link( '<div class="nav nav-previous">%link</div>', _x( '<span class="meta-label">Previously</span>%title', 'Previous post link', 'cinnamon' ) );
+				next_post_link(     '<div class="nav nav-next">%link</div>',     _x( '<span class="meta-label">Read Next</span>%title', 'Next post link',     'cinnamon' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -179,9 +179,9 @@ function cinnamon_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'cinnamon' ) );
+		$tags_list = get_the_tag_list( '', __( ' ', 'cinnamon' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'cinnamon' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><span class="section-title">' . __( 'Tagged', 'cinnamon' ) . '</span> %1$s</span>', $tags_list );
 		}
 	}
 
@@ -192,6 +192,59 @@ function cinnamon_entry_footer() {
 	}
 
 	edit_post_link( __( 'Edit', 'cinnamon' ), '<span class="edit-link">', '</span>' );
+}
+endif;
+
+if( ! function_exists( 'cinnamon_comment' ) ) :
+/**
+ * Prints HTML of single comment
+ */
+function cinnamon_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
+
+	if ( 'div' == $args['style'] ) {
+		$tag = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag = 'li';
+		$add_below = 'div-comment';
+	}
+?>
+	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+
+	<?php if ( 'div' != $args['style'] ) : ?>
+		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	<?php endif; ?>
+	
+	<div class="comment-identity">
+		<div class="comment-author vcard">
+			<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+			<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
+		</div>
+
+		<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+			<?php
+				/* translators: 1: date*/
+				printf( __('on %1$s'), get_comment_date( 'M j, Y' ) ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  ', '' );
+			?>
+		</div>
+		
+	</div>
+
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+	<?php endif; ?>
+
+	<?php comment_text(); ?>
+
+	<div class="reply">
+	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+	</div>
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+	<?php endif; ?>
+<?php
 }
 endif;
 
@@ -235,3 +288,4 @@ function cinnamon_category_transient_flusher() {
 }
 add_action( 'edit_category', 'cinnamon_category_transient_flusher' );
 add_action( 'save_post',     'cinnamon_category_transient_flusher' );
+

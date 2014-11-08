@@ -3,7 +3,6 @@ $color__accent: #F2E6D7;
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
@@ -12,6 +11,7 @@ $color__text-input-focus: #111;
 $color__link: darken( $color__accent, 60% );
 $color__link-visited: darken( $color__accent, 50% );
 $color__link-hover: darken( $color__accent, 40% );
+$color__link-shadow: darken( $color__link, 20% );
 $color__text-main: #7C7C7C;
 
 $color__border-button: #ccc #ccc #bbb;

@@ -43,6 +43,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'callback' 	 => 'cinnamon_comment'
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -64,6 +65,12 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'cinnamon' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+		comment_form( array(
+			'comment_notes_before' 	=> false,
+			'comment_notes_after' 	=> false,
+			'title_reply'			=> __( 'Share Your Thought', 'cinnamon' )
+		) ); 
+	?>
 
 </div><!-- #comments -->
