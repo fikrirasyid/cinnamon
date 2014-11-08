@@ -483,13 +483,6 @@ a:hover, a:focus, a:active {
     display: none;
   }
 }
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-
 /**
 * Older / Newer navigation
 */
@@ -591,6 +584,10 @@ a:hover, a:focus, a:active {
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
+#secondary {
+  border-top: 1px solid #EFEFEF;
+}
+
 .widget {
   padding: 15px;
   border-bottom: 1px solid #EFEFEF;
