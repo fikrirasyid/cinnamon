@@ -20,13 +20,25 @@
 
 	.entry-title{
 		@include font-size( 2 );
-		line-height: 1.5;
+		line-height: 1.3;
 		font-weight: bold;
 		color: $color__text-title;
 
 		a{
 			color: $color__text-title;
 			text-decoration: none;
+		}
+	}
+
+	.entry-subtitle{
+		@include font-size( 1.7 );
+		font-weight: lighter;
+		color: $color__text-light;
+		margin-top: 10px;
+		margin-bottom: 15px;
+
+		a{
+			color: $color__text-light;			
 		}
 	}
 

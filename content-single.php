@@ -11,6 +11,8 @@
 		</div><!-- .entry-meta -->
 		
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<?php cinnamon_entry_subtitle(); ?>		
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

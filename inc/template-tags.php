@@ -85,6 +85,70 @@ function cinnamon_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'cinnamon_entry_subtitle' ) ) :
+/**
+ * Prints HTML "sub-title" if there's any subtitle plugin. If there's no subtitle plugin, print category elegantly (using ampersand for the last category)
+ */
+function cinnamon_entry_subtitle(){
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		// Get category list
+		$categories = get_the_category_list( __( ', ', 'cinnamon' ) );
+		
+		// Explode into array by comma
+		$categories_list = explode(', ', $categories );
+
+		// Count the number of category. 1 = just print it, 2 = separate with ampersand, n = separate the last category with ampersand (oxford style)
+		$categories_count = count( $categories_list );
+
+		// Check category count, prepare the categories to be printed
+		if ( 2 < $categories_count ) {
+
+			$the_categories = '';
+	
+			$cat_index = 0;
+
+			// Loop and printc categories
+			foreach ( $categories_list as $cat ) {
+				$cat_index++;
+
+				if( $cat_index > 1 && $cat_index < $categories_count ){
+					$the_categories .= ', ';
+				}
+
+				if( $cat_index > 1 && $cat_index == $categories_count ){
+					$the_categories .= ', &amp; ';
+				}
+
+				$the_categories .= $cat;
+			}
+
+		} elseif( 2 == $categories_count ) {
+
+			$the_categories = '';
+	
+			$cat_index = 0;
+
+			// Loop and printc categories
+			foreach ( $categories_list as $cat ) {
+				$cat_index++;
+
+				if( $cat_index > 1 && $cat_index == $categories_count ){
+					$the_categories .= ' &amp; ';
+				}
+
+				$the_categories .= $cat;
+			}			
+
+		} else {
+			$the_categories = $categories;
+		}
+
+		printf( '<h3 class="entry-subtitle">' . __( 'On %1$s', 'cinnamon' ) . '</h3>', $the_categories );
+	}
+}
+endif;
+
 if ( ! function_exists( 'cinnamon_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -92,12 +156,6 @@ if ( ! function_exists( 'cinnamon_entry_footer' ) ) :
 function cinnamon_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'cinnamon' ) );
-		if ( $categories_list && cinnamon_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'cinnamon' ) . '</span>', $categories_list );
-		}
-
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'cinnamon' ) );
 		if ( $tags_list ) {
