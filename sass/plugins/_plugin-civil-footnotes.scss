@@ -1,0 +1,29 @@
+.entry-content{
+	hr.footnotes{
+		display: none;
+	}
+
+	ol.footnotes{
+		@include font-size( 1.2 );
+		color: $color__text-light;
+		position: relative;
+		margin-top: 3em;
+		padding-top: 3em;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 65%;
+			height: 1px;
+			background: $color__border;
+		}
+
+		li{
+			p:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}

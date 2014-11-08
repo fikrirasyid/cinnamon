@@ -3,7 +3,36 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
+	padding: 15px;
+	border-bottom: 1px solid $color__border;
+
+	.entry-meta{
+		margin-bottom: 5px;
+		
+		a{
+			@include font-size( 1.2 );
+			font-weight: lighter;
+			text-decoration: none;
+			color: $color__text-date;
+		}
+	}
+
+	.entry-title{
+		@include font-size( 2 );
+		line-height: 1.5;
+		font-weight: bold;
+		color: $color__text-title;
+
+		a{
+			color: $color__text-title;
+			text-decoration: none;
+		}
+	}
+
+	.entry-content{
+		margin-top: 10px;
+	}
 }
 
 .byline,
@@ -14,12 +43,6 @@
 .single .byline,
 .group-blog .byline {
 	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
 }
 
 .page-links {

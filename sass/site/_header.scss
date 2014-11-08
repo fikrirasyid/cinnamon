@@ -1,0 +1,61 @@
+body{
+	border-top: 5px solid $color__accent;
+	background: white;
+}
+
+#masthead{
+	background: white;
+	border-bottom: 1px solid $color__border;
+
+	.site-title{
+		float:left;
+		@include font-size( 1.8 );
+		font-weight: bold;
+		padding: 10px 15px;
+
+		a{
+			color: $color__text-title;
+			text-decoration: none;
+		}
+	}
+}
+
+#site-navigation{
+	display: none;
+}
+
+#home-cover{
+	position: relative;
+	text-align: center;
+	padding: 55px 10px 70px;
+
+	.background{
+		background: $color__accent;
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		opacity: .3;
+	}
+
+	.site-title,
+	.site-description{
+		position: relative;
+		z-index: 20;
+	}
+
+	.site-title{
+		@include font-size( 2.8 );
+		font-weight: bold;
+		color: $color__text-title;
+	}
+
+	.site-description{
+		@include font-size( 1.8 );
+		font-weight: lighter;
+		color: $color__text-light;
+	}
+}

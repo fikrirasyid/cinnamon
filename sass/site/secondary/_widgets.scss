@@ -1,10 +1,30 @@
 .widget {
-	margin: 0 0 1.5em;
+	padding: 15px;
+	border-bottom: 1px solid $color__border;
 
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
 	}
+
+	ul,ol{
+		margin-left: 0;
+	}
+
+	li{
+		list-style: none;
+		margin-bottom: 3px;
+	}
+
+	a{
+		color: $color__text-light;
+	}
+}
+
+.widget-title{
+	@include font-size( 1.6 );
+	font-weight: lighter;
+	margin-bottom: 10px;
 }
 
 /* Search widget */

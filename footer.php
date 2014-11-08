@@ -12,9 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cinnamon' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'cinnamon' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'cinnamon' ), 'Cinnamon', '<a href="http://fikrirasy.id" rel="designer">Fikri Rasyid</a>' ); ?>
+			<?php printf( __( 'Powered by %s &amp; %s', 'cinnamon' ), '<a href="http://wordpress.org/">WordPress</a>', '<a href="http://fikrirasy.id/portfolio/cinnamon/">Cinnamon Theme</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

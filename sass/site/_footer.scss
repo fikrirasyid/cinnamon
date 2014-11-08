@@ -1,0 +1,11 @@
+#colophon{
+	padding: 10px 15px;
+	border-top: 1px solid $color__border;
+	color: $color__text-light;
+	text-align: center;
+	@include font-size( 1.2 );
+
+	a{
+		color: $color__text-light;		
+	}
+}
