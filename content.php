@@ -16,6 +16,8 @@
 
 		<?php cinnamon_entry_subtitle(); ?>
 	</header><!-- .entry-header -->
+	
+	<?php if ( 'post' != get_post_type() || 'aside' == get_post_format() ) : ?>
 
 	<div class="entry-content">
 		<?php
@@ -34,7 +36,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php cinnamon_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php endif; ?>
+
 </article><!-- #post-## -->

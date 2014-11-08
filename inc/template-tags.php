@@ -91,7 +91,7 @@ if ( ! function_exists( 'cinnamon_entry_subtitle' ) ) :
  */
 function cinnamon_entry_subtitle(){
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
+	if ( 'post' == get_post_type() && 'aside' != get_post_format() ) {
 		// Get category list
 		$categories = get_the_category_list( __( ', ', 'cinnamon' ) );
 		
@@ -144,7 +144,7 @@ function cinnamon_entry_subtitle(){
 			$the_categories = $categories;
 		}
 
-		printf( '<h3 class="entry-subtitle">' . __( 'On %1$s', 'cinnamon' ) . '</h3>', $the_categories );
+		printf( '<h3 class="entry-subtitle">' . __( 'on %1$s', 'cinnamon' ) . '</h3>', $the_categories );
 	}
 }
 endif;

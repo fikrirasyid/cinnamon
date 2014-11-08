@@ -58,7 +58,7 @@ function cinnamon_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside',
 	) );
 
 	// Set up the WordPress core custom background feature.
