@@ -343,6 +343,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   background: #986b32;
+  outline: 0;
 }
 
 input[type="checkbox"],
@@ -609,8 +610,12 @@ a:hover, a:focus, a:active {
 }
 
 /* Search widget */
+.widget_search .search-field {
+  display: inline-block;
+  margin-bottom: -1px;
+}
 .widget_search .search-submit {
-  display: none;
+  margin-left: 5px;
 }
 
 /*--------------------------------------------------------------

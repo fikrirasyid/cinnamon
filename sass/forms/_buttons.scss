@@ -31,4 +31,5 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
 	background: $color__link-visited;
+	outline: 0;
 }

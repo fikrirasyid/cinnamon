@@ -32,6 +32,13 @@
 }
 
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
+.widget_search{
+	.search-field{
+		display: inline-block;
+		margin-bottom: -1px;
+	}
+
+	.search-submit {
+		margin-left: 5px;
+	}	
 }
