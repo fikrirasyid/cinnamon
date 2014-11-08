@@ -16,6 +16,8 @@ get_header(); ?>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cinnamon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
+			<?php cinnamon_paging_nav_newer(); ?>
+
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -30,7 +32,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php cinnamon_paging_nav(); ?>
+			<?php cinnamon_paging_nav_older(); ?>
 
 		<?php else : ?>
 

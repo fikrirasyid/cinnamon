@@ -6,6 +6,7 @@
  *
  * @package Cinnamon
  */
+global $paged;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -33,7 +34,7 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	
-	<?php if( is_home() ) : ?>
+	<?php if( is_home() && 0 == $paged  ) : ?>
 
 	<div id="home-cover">
 		<div class="background"></div>

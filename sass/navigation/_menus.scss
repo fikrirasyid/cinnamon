@@ -84,17 +84,17 @@
 	overflow: hidden;
 }
 
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
+/**
+* Older / Newer navigation
+*/
+.paging-navigation{
+	text-align: center;
+	padding: 40px 10px;
 
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	a{
+		@include font-size( 1.4 );
+		border: 1px solid $color__link;
+		padding: 7px 40px;
+		@include border-radius( 4px );
+	}
 }

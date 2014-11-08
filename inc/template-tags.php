@@ -7,30 +7,52 @@
  * @package Cinnamon
  */
 
-if ( ! function_exists( 'cinnamon_paging_nav' ) ) :
+if( ! function_exists( 'cinnamon_paging_nav_newer' ) ) :
 /**
- * Display navigation to next/previous set of posts when applicable.
+ * Display navigation to newer set of posts when applicable.
  */
-function cinnamon_paging_nav() {
+function cinnamon_paging_nav_newer() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
+	<?php if ( get_previous_posts_link() ) : ?>
+
+	<nav class="navigation paging-navigation newer" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'cinnamon' ); ?></h1>
 		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'cinnamon' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'cinnamon' ) ); ?></div>
-			<?php endif; ?>
-
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer stories', 'cinnamon' ) ); ?></div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
+
+	<?php endif; ?>
+
+	<?php
+}
+endif; 
+
+if ( ! function_exists( 'cinnamon_paging_nav_older' ) ) :
+/**
+ * Display navigation to older set of posts when applicable.
+ */
+function cinnamon_paging_nav_older() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<?php if ( get_next_posts_link() ) : ?>
+
+	<nav class="navigation paging-navigation older" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'cinnamon' ); ?></h1>
+		<div class="nav-links">
+			<div class="nav-previous"><?php next_posts_link( __( 'More stories', 'cinnamon' ) ); ?></div>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+
+	<?php endif; ?>
+
 	<?php
 }
 endif;

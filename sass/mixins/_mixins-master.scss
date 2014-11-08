@@ -20,3 +20,10 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Border radius
+@mixin border-radius($radius) {
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}

@@ -490,19 +490,22 @@ a:hover, a:focus, a:active {
   overflow: hidden;
 }
 
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
+/**
+* Older / Newer navigation
+*/
+.paging-navigation {
+  text-align: center;
+  padding: 40px 10px;
 }
-
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
+.paging-navigation a {
+  font-size: 14px;
+  font-size: 1.4rem;
+  border: 1px solid #725025;
+  padding: 7px 40px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
 /*--------------------------------------------------------------

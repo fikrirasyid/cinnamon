@@ -18,6 +18,8 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
+			<?php cinnamon_paging_nav_newer(); ?>
+
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -31,7 +33,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php cinnamon_paging_nav(); ?>
+			<?php cinnamon_paging_nav_older(); ?>
 
 		<?php else : ?>
 
