@@ -235,8 +235,10 @@ function cinnamon_comment($comment, $args, $depth) {
 	<?php if ( $comment->comment_approved == '0' ) : ?>
 		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
 	<?php endif; ?>
-
-	<?php comment_text(); ?>
+	
+	<div class="comment-content">
+		<?php comment_text(); ?>	
+	</div>
 
 	<div class="reply">
 	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>

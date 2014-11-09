@@ -63,11 +63,23 @@
 	}
 }
 
+#cancel-comment-reply-link,
 .comment-reply-link{
 	border: 1px solid $color__link;
 	padding: 3px 15px;
 	line-height: 1;
 	@include border-radius( 4px );
+	@include font-size( 1.1 );
+	font-weight: normal;
+
+	&:hover{
+		text-decoration: none;
+		border-color: $color__link-hover;
+	}
+
+	&:active{
+		border-color: $color__link-visited;
+	}
 }
 
 .comment-content a {
@@ -82,6 +94,16 @@
 	color: $color__text-title;
 	font-weight: 900;
 	margin-bottom: 20px;
+	position: relative;
+	padding-right: 90px;
+	line-height: 1.2;
+}
+
+#cancel-comment-reply-link{
+	position: absolute;
+	top: -1px;
+	right: 0;
+	padding: 4px 10px 5px;
 }
 
 #respond{
