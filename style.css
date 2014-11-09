@@ -700,9 +700,39 @@ body {
   margin: 0;
   padding: 15px;
   border-bottom: 1px solid #EFEFEF;
+  position: relative;
 }
 .hentry.format-aside {
   background: #FAFAFA;
+}
+.hentry.format-aside .entry-featured-image.as-background {
+  display: none;
+}
+.hentry .entry-featured-image.as-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 10;
+}
+.hentry .entry-featured-image.as-background:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background: white;
+  opacity: .9;
+}
+.hentry .entry-featured-image.as-background img {
+  width: 100%;
+}
+.hentry .entry-header {
+  position: relative;
+  z-index: 20;
 }
 .hentry .entry-meta {
   margin-bottom: 5px;
@@ -738,6 +768,8 @@ body {
   color: #B9B1AF;
 }
 .hentry .entry-content {
+  position: relative;
+  z-index: 20;
   margin-top: 20px;
 }
 .hentry .tags-links {

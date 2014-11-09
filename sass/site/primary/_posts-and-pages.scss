@@ -6,9 +6,44 @@
 	margin: 0;
 	padding: 15px;
 	border-bottom: 1px solid $color__border;
+	position: relative;
 
 	&.format-aside{
 		background: $color__aside-bg;
+
+		.entry-featured-image.as-background{
+			display: none;
+		}
+	}
+
+	.entry-featured-image.as-background{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: 10;
+
+		&:before{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			content: '';
+			background: white;
+			opacity: .9;
+		}
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.entry-header{
+		position: relative;
+		z-index: 20; // should be higher than .entry-featured-image
 	}
 
 	.entry-meta{
@@ -48,6 +83,8 @@
 	}
 
 	.entry-content{
+		position: relative;
+		z-index: 20; // should be higher than .entry-featured-image
 		margin-top: 20px;
 	}
 
