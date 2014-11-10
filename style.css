@@ -289,6 +289,20 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content big {
   font-size: 125%;
 }
+.comment-content ul, .comment-content ol,
+.entry-content ul,
+.entry-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+.comment-content ul li,
+.entry-content ul li {
+  list-style: disc;
+}
+.comment-content ol li,
+.entry-content ol li {
+  list-style: decimal;
+}
 
 /*--------------------------------------------------------------
 3.0 Elements

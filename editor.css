@@ -1,0 +1,377 @@
+/*--------------------------------------------------------------
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll;
+  /* Keeps page centered in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+  box-sizing: border-box;
+  /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+a img {
+  border: 0;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #7C7C7C;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+.comment-content h1,
+.entry-content h1 {
+  font-weight: 900;
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #505050;
+  line-height: 1.2;
+  margin-bottom: .7em;
+}
+.comment-content h2,
+.entry-content h2 {
+  font-weight: 900;
+  font-size: 19px;
+  font-size: 1.9rem;
+  color: #505050;
+  line-height: 1.3;
+  margin-bottom: .7em;
+}
+.comment-content h3,
+.entry-content h3 {
+  font-weight: 900;
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #505050;
+  line-height: 1.3;
+  margin-bottom: .7em;
+}
+.comment-content h4,
+.entry-content h4 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: #B9B1AF;
+  line-height: 1.4;
+  margin-bottom: .7em;
+}
+.comment-content p,
+.entry-content p {
+  margin-bottom: 1em;
+}
+.comment-content b, .comment-content strong,
+.entry-content b,
+.entry-content strong {
+  font-weight: 900;
+  color: #505050;
+}
+.comment-content dfn, .comment-content cite, .comment-content em, .comment-content i,
+.entry-content dfn,
+.entry-content cite,
+.entry-content em,
+.entry-content i {
+  font-style: italic;
+}
+.comment-content blockquote,
+.entry-content blockquote {
+  margin: 1em 1em 0;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: #B9B1AF;
+  line-height: 1.4;
+}
+.comment-content address,
+.entry-content address {
+  margin: 0 0 1em;
+  font-style: italic;
+  line-height: 1.4;
+  color: #505050;
+}
+.comment-content pre,
+.entry-content pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+.comment-content code, .comment-content kbd, .comment-content tt, .comment-content var,
+.entry-content code,
+.entry-content kbd,
+.entry-content tt,
+.entry-content var {
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  color: #505050;
+}
+.comment-content abbr, .comment-content acronym,
+.entry-content abbr,
+.entry-content acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+.comment-content mark, .comment-content ins,
+.entry-content mark,
+.entry-content ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+.comment-content sup,
+.comment-content sub,
+.entry-content sup,
+.entry-content sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.comment-content sup,
+.entry-content sup {
+  bottom: 1ex;
+}
+.comment-content sub,
+.entry-content sub {
+  top: .5ex;
+}
+.comment-content small,
+.entry-content small {
+  font-size: 75%;
+}
+.comment-content big,
+.entry-content big {
+  font-size: 125%;
+}
+.comment-content ul, .comment-content ol,
+.entry-content ul,
+.entry-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+.comment-content ul li,
+.entry-content ul li {
+  list-style: disc;
+}
+.comment-content ol li,
+.entry-content ol li {
+  list-style: decimal;
+}
+
+body#tinymce {
+  padding: 20px 20px 0 !important;
+  max-width: 660px;
+}
+body#tinymce h1 {
+  font-weight: 900;
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #505050;
+  line-height: 1.2;
+  margin-bottom: .7em;
+}
+body#tinymce h2 {
+  font-weight: 900;
+  font-size: 19px;
+  font-size: 1.9rem;
+  color: #505050;
+  line-height: 1.3;
+  margin-bottom: .7em;
+}
+body#tinymce h3 {
+  font-weight: 900;
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #505050;
+  line-height: 1.3;
+  margin-bottom: .7em;
+}
+body#tinymce h4 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: #B9B1AF;
+  line-height: 1.4;
+  margin-bottom: .7em;
+}
+body#tinymce p {
+  margin-bottom: 1em;
+}
+body#tinymce b, body#tinymce strong {
+  font-weight: 900;
+  color: #505050;
+}
+body#tinymce dfn, body#tinymce cite, body#tinymce em, body#tinymce i {
+  font-style: italic;
+}
+body#tinymce blockquote {
+  margin: 1em 1em 0;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: #B9B1AF;
+  line-height: 1.4;
+}
+body#tinymce address {
+  margin: 0 0 1em;
+  font-style: italic;
+  line-height: 1.4;
+  color: #505050;
+}
+body#tinymce pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+body#tinymce code, body#tinymce kbd, body#tinymce tt, body#tinymce var {
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  color: #505050;
+}
+body#tinymce abbr, body#tinymce acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+body#tinymce mark, body#tinymce ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+body#tinymce sup,
+body#tinymce sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+body#tinymce sup {
+  bottom: 1ex;
+}
+body#tinymce sub {
+  top: .5ex;
+}
+body#tinymce small {
+  font-size: 75%;
+}
+body#tinymce big {
+  font-size: 125%;
+}
+body#tinymce ul, body#tinymce ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+body#tinymce ul li {
+  list-style: disc;
+}
+body#tinymce ol li {
+  list-style: decimal;
+}
