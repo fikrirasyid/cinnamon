@@ -933,6 +933,10 @@ body {
 /**	
 * Single template styling
 */
+.single .entry-featured-post img,
+.page .entry-featured-post img {
+  width: 100%;
+}
 .single .hentry .entry-title,
 .page .hentry .entry-title {
   font-size: 24px;
@@ -943,8 +947,41 @@ body {
 * Tablet adjustment
 */
 @media screen and (min-width: 760px) {
+  .entry-featured-post {
+    height: 400px;
+    overflow-y: hidden;
+  }
+
   .hentry {
     padding: 20px 33px;
+  }
+  .hentry .tags-links {
+    margin: 10px -33px 0;
+    padding: 10px 33px 0;
+  }
+
+  .post-navigation {
+    position: relative;
+  }
+  .post-navigation:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 1px;
+    background: #EFEFEF;
+  }
+  .post-navigation .nav {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+  }
+  .post-navigation .nav a {
+    padding: 15px 33px;
+  }
+  .post-navigation .nav-next {
+    text-align: right;
   }
 }
 /*--------------------------------------------------------------
@@ -1086,6 +1123,41 @@ body {
   width: 100%;
 }
 
+/**
+* Tablet adjustment
+*/
+@media screen and (min-width: 760px) {
+  .comments-title {
+    padding: 30px 33px;
+    font-size: 20px;
+    font-size: 2rem;
+  }
+
+  .comment-body {
+    padding: 0 33px 40px 124px;
+  }
+  .comment-body .avatar {
+    left: 33px;
+    width: 60px;
+  }
+
+  .comment-list .children {
+    margin-left: 90px;
+  }
+
+  #respond {
+    padding: 30px 33px;
+  }
+
+  #reply-title {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+
+  .reply {
+    padding-top: 15px;
+  }
+}
 /*--------------------------------------------------------------
 12.0 Content
 --------------------------------------------------------------*/

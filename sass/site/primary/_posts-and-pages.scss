@@ -156,6 +156,12 @@
 */
 .single,
 .page{
+	.entry-featured-post{
+		img{
+			width: 100%;
+		}
+	}
+
 	.hentry{
 		.entry-title{
 			@include font-size( 2.4 );
@@ -167,7 +173,44 @@
 * Tablet adjustment
 */
 @media screen and ( min-width: $size__breakpoint-tablet ){
+	.entry-featured-post{
+		height: 400px;
+		overflow-y: hidden;
+	}
+
 	.hentry{
 		padding: 20px 33px;		
+
+		.tags-links{
+			margin: 10px -33px 0;
+			padding: 10px 33px 0;
+		}
+	}
+
+	.post-navigation{
+		position: relative;
+
+		&:before{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			content: '';
+			width: 1px; 
+			background: $color__border;
+		}
+		.nav{
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+
+			a{
+				padding: 15px 33px;
+			}
+		}
+
+		.nav-next{
+			text-align: right;
+		}
 	}
 }
