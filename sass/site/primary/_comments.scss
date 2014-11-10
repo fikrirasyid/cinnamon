@@ -63,6 +63,10 @@
 	}
 }
 
+#comment{
+	margin-bottom: 18px;
+}
+
 #cancel-comment-reply-link,
 .comment-reply-link{
 	border: 1px solid $color__link;
@@ -108,6 +112,7 @@
 
 #respond{
 	padding: 15px;
+	margin-bottom: 8px;
 
 	label{
 		display: block;
