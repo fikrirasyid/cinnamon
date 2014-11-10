@@ -156,7 +156,7 @@
 */
 .single,
 .page{
-	.entry-featured-post{
+	.entry-featured-image{
 		img{
 			width: 100%;
 		}
@@ -173,7 +173,7 @@
 * Tablet adjustment
 */
 @media screen and ( min-width: $size__breakpoint-tablet ){
-	.entry-featured-post{
+	.entry-featured-image{
 		height: 400px;
 		overflow-y: hidden;
 	}

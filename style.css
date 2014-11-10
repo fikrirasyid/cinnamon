@@ -933,8 +933,8 @@ body {
 /**	
 * Single template styling
 */
-.single .entry-featured-post img,
-.page .entry-featured-post img {
+.single .entry-featured-image img,
+.page .entry-featured-image img {
   width: 100%;
 }
 .single .hentry .entry-title,
@@ -947,7 +947,7 @@ body {
 * Tablet adjustment
 */
 @media screen and (min-width: 760px) {
-  .entry-featured-post {
+  .entry-featured-image {
     height: 400px;
     overflow-y: hidden;
   }
