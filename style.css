@@ -890,6 +890,15 @@ body {
   font-weight: 900;
 }
 
+/**	
+* Single template styling
+*/
+.single .hentry .entry-title,
+.page .hentry .entry-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
 /*--------------------------------------------------------------
 11.2 Asides
 --------------------------------------------------------------*/

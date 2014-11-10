@@ -150,3 +150,15 @@
 		}
 	}
 }
+
+/**	
+* Single template styling
+*/
+.single,
+.page{
+	.hentry{
+		.entry-title{
+			@include font-size( 2.4 );
+		}		
+	}
+}
