@@ -65,3 +65,14 @@ body{
 	border: none;
 	padding-top: 55px;
 }
+
+/**
+* Tablet adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-tablet ){
+	#masthead{
+		.site-title{
+			padding-left: 35px;
+		}
+	}
+}

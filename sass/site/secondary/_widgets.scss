@@ -33,12 +33,30 @@
 
 /* Search widget */
 .widget_search{
+	.search-form{
+		position: relative;
+		padding-right: 105px;
+	}
+
 	.search-field{
-		display: inline-block;
-		margin-bottom: -1px;
+		display: block;
+		width: 100%;
+		@include box-sizing( border-box );
 	}
 
 	.search-submit {
 		margin-left: 5px;
+		position: absolute;
+		top: 0;
+		right: 0;
 	}	
+}
+
+/**
+* Tablet adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-tablet ){
+	.widget{
+		padding: 20px 33px;		
+	}
 }

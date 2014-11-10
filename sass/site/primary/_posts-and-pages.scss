@@ -162,3 +162,12 @@
 		}		
 	}
 }
+
+/**
+* Tablet adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-tablet ){
+	.hentry{
+		padding: 20px 33px;		
+	}
+}

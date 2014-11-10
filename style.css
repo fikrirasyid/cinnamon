@@ -681,14 +681,32 @@ a:hover, a:focus, a:active {
 }
 
 /* Search widget */
+.widget_search .search-form {
+  position: relative;
+  padding-right: 105px;
+}
 .widget_search .search-field {
-  display: inline-block;
-  margin-bottom: -1px;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .widget_search .search-submit {
   margin-left: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
+/**
+* Tablet adjustment
+*/
+@media screen and (min-width: 760px) {
+  .widget {
+    padding: 20px 33px;
+  }
+}
 /*--------------------------------------------------------------
 10.0 Header
 --------------------------------------------------------------*/
@@ -757,6 +775,14 @@ body {
   padding-top: 55px;
 }
 
+/**
+* Tablet adjustment
+*/
+@media screen and (min-width: 760px) {
+  #masthead .site-title {
+    padding-left: 35px;
+  }
+}
 /*--------------------------------------------------------------
 11.0 Content
 --------------------------------------------------------------*/
@@ -913,6 +939,14 @@ body {
   font-size: 2.4rem;
 }
 
+/**
+* Tablet adjustment
+*/
+@media screen and (min-width: 760px) {
+  .hentry {
+    padding: 20px 33px;
+  }
+}
 /*--------------------------------------------------------------
 11.2 Asides
 --------------------------------------------------------------*/

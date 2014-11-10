@@ -27,3 +27,10 @@
 	-webkit-border-radius: $radius;
 	border-radius: $radius;
 }
+
+// Box model
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model; // Safari <= 7
+	-moz-box-sizing: $box-model; // Firefox <= 19
+	box-sizing: $box-model;
+}
