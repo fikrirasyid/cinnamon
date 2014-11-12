@@ -130,13 +130,14 @@
 }
 
 .post-navigation{
+	border-bottom: 1px solid $color__border;
+
 	.nav{
 		display: inline-block;
 		width: 100%;
 		vertical-align: top;
 		line-height: 1.3;
 		@include font-size( 1.4 );
-		border-bottom: 1px solid $color__border;
 
 		a{
 			display: block;

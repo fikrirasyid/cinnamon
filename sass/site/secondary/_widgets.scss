@@ -60,3 +60,18 @@
 		padding: 20px 33px;		
 	}
 }
+
+/**
+* Desktop adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	#secondary{
+		border-top: none;
+	}
+
+	.widget{
+		border-bottom: none;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

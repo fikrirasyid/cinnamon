@@ -112,6 +112,20 @@ textarea {
   line-height: 1.7;
 }
 
+/**
+* Desktop adjustment
+*/
+@media screen and (min-width: 960px) {
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }

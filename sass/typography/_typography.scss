@@ -9,6 +9,20 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+/**
+* Desktop adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		@include font-size( 1.6 );
+		line-height: 1.8;
+	}
+}
+
 @import "headings";
 
 @import "copy";
