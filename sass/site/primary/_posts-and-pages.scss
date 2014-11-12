@@ -7,6 +7,7 @@
 	padding: 15px;
 	border-bottom: 1px solid $color__border;
 	position: relative;
+	overflow: hidden;
 
 	&.format-aside{
 		background: $color__aside-bg;

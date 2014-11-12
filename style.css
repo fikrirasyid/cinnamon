@@ -798,6 +798,7 @@ body {
   padding: 15px;
   border-bottom: 1px solid #EFEFEF;
   position: relative;
+  overflow: hidden;
 }
 .hentry.format-aside {
   background: #FAFAFA;
