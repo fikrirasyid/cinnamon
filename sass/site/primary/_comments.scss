@@ -166,3 +166,23 @@
 		padding-top: 15px;
 	}
 }
+
+/**
+* Desktop Adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	#respond{
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url{
+			display: inline-block;
+			width: 32%;
+			vertical-align: top;
+			margin-right: 1.4%;
+		}
+
+		.comment-form-url{
+			margin-right: 0;
+		}
+	}
+}

@@ -76,3 +76,24 @@ body{
 		}
 	}
 }
+
+/**
+* Desktop Adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	.page-header{
+		padding: 100px 10px 120px;
+
+		.page-title{
+			@include font-size( 3.6 );
+		}
+
+		.page-description{
+			@include font-size( 2.4 );
+		}
+	}
+
+	.home .page-header{
+		padding-top: 100px;
+	}
+}

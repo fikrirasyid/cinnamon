@@ -33,3 +33,15 @@ input[type="submit"]:active {
 	background: $color__link-visited;
 	outline: 0;
 }
+
+/**
+* Desktop Adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"]{
+		@include font-size( 1.6 );
+	}	
+}

@@ -431,6 +431,18 @@ input[type="submit"]:active {
   outline: 0;
 }
 
+/**
+* Desktop Adjustment
+*/
+@media screen and (min-width: 960px) {
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+}
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
@@ -733,6 +745,13 @@ a:hover, a:focus, a:active {
     border-bottom: none;
     padding-right: 0;
     padding-left: 0;
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+
+  .widget-title {
+    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 /*--------------------------------------------------------------
@@ -809,6 +828,26 @@ body {
 @media screen and (min-width: 760px) {
   #masthead .site-title {
     padding-left: 35px;
+  }
+}
+/**
+* Desktop Adjustment
+*/
+@media screen and (min-width: 960px) {
+  .page-header {
+    padding: 100px 10px 120px;
+  }
+  .page-header .page-title {
+    font-size: 36px;
+    font-size: 3.6rem;
+  }
+  .page-header .page-description {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+
+  .home .page-header {
+    padding-top: 100px;
   }
 }
 /*--------------------------------------------------------------
@@ -1015,6 +1054,39 @@ body {
     text-align: right;
   }
 }
+/**
+* Desktop Adjustment
+*/
+@media screen and (min-width: 960px) {
+  .hentry {
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+  .hentry .entry-title {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+  .hentry .entry-subtitle {
+    font-size: 17px;
+    font-size: 1.7rem;
+  }
+
+  .single .hentry .entry-title,
+  .page .hentry .entry-title {
+    font-size: 36px;
+    font-size: 3.6rem;
+  }
+  .single .hentry .entry-subtitle,
+  .page .hentry .entry-subtitle {
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin-top: 8px;
+  }
+  .single .hentry .entry-content,
+  .page .hentry .entry-content {
+    margin-top: 50px;
+  }
+}
 /*--------------------------------------------------------------
 11.2 Asides
 --------------------------------------------------------------*/
@@ -1187,6 +1259,22 @@ body {
 
   .reply {
     padding-top: 15px;
+  }
+}
+/**
+* Desktop Adjustment
+*/
+@media screen and (min-width: 960px) {
+  #respond .comment-form-author,
+  #respond .comment-form-email,
+  #respond .comment-form-url {
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+    margin-right: 1.4%;
+  }
+  #respond .comment-form-url {
+    margin-right: 0;
   }
 }
 /*--------------------------------------------------------------
