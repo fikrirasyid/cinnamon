@@ -45,6 +45,18 @@
 	.entry-header{
 		position: relative;
 		z-index: 20; // should be higher than .entry-featured-image
+
+		.edit-link{
+			display: inline-block;
+
+			a{
+				border: 1px solid $color__link;
+				color: $color__link;
+				padding: 2px 10px;
+				@include border-radius( 4px );
+				font-weight: normal;
+			}
+		}		
 	}
 
 	.entry-meta{
@@ -55,6 +67,10 @@
 			font-weight: lighter;
 			text-decoration: none;
 			color: $color__text-date;
+		}
+
+		.edit-link{
+			float: right;
 		}
 	}
 
@@ -168,6 +184,18 @@
 		.entry-title{
 			@include font-size( 2.4 );
 		}		
+	}
+}
+
+/**
+* Page styling
+*/ 
+.page{
+	.entry-header{
+		.edit-link{
+			margin-top: 10px;
+			@include font-size( 1.2 );
+		}
 	}
 }
 

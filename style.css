@@ -656,6 +656,8 @@ a:hover, a:focus, a:active {
 .comment-content:after,
 .site-header:before,
 .site-header:after,
+.entry-meta:before,
+.entry-meta:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
@@ -899,6 +901,19 @@ body {
   position: relative;
   z-index: 20;
 }
+.hentry .entry-header .edit-link {
+  display: inline-block;
+}
+.hentry .entry-header .edit-link a {
+  border: 1px solid #725025;
+  color: #725025;
+  padding: 2px 10px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-weight: normal;
+}
 .hentry .entry-meta {
   margin-bottom: 5px;
 }
@@ -908,6 +923,9 @@ body {
   font-weight: lighter;
   text-decoration: none;
   color: #AFAFAF;
+}
+.hentry .entry-meta .edit-link {
+  float: right;
 }
 .hentry .entry-title {
   font-size: 20px;
@@ -1011,6 +1029,15 @@ body {
 .page .hentry .entry-title {
   font-size: 24px;
   font-size: 2.4rem;
+}
+
+/**
+* Page styling
+*/
+.page .entry-header .edit-link {
+  margin-top: 10px;
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 /**

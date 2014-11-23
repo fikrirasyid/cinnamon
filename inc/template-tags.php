@@ -104,6 +104,9 @@ function cinnamon_posted_on() {
 
 	echo '<span class="posted-on">' . $posted_on . '</span>';
 
+	if( is_singular() ){
+		edit_post_link( __( 'Edit', 'cinnamon' ), '<span class="edit-link">', '</span>' );
+	}
 }
 endif;
 
@@ -190,8 +193,6 @@ function cinnamon_entry_footer() {
 		comments_popup_link( __( 'Leave a comment', 'cinnamon' ), __( '1 Comment', 'cinnamon' ), __( '% Comments', 'cinnamon' ) );
 		echo '</span>';
 	}
-
-	edit_post_link( __( 'Edit', 'cinnamon' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
