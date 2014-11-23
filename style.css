@@ -524,13 +524,16 @@ a:hover, a:focus, a:active {
   display: block;
   float: left;
   width: 100%;
+  background: #FDFDFD;
   border-top: 1px solid #EFEFEF;
-  background: #fafafa;
+}
+.main-navigation.toggled {
+  border-bottom: 1px solid #EFEFEF;
 }
 .main-navigation ul {
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding: 5px 0;
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -560,7 +563,9 @@ a:hover, a:focus, a:active {
   display: block;
   text-decoration: none;
   padding: 7px 15px;
-  border-bottom: 1px solid #EFEFEF;
+  color: #505050;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 /* Small menu */
@@ -798,7 +803,7 @@ body {
   right: 15px;
   overflow: hidden;
   background: white;
-  color: #725025;
+  color: #505050;
 }
 
 .page-header {

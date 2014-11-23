@@ -3,13 +3,17 @@
 	display: block;
 	float: left;
 	width: 100%;
-	border-top: 1px solid $color__border;
 	background: $color__menu-background;
+	border-top: 1px solid $color__border;
+
+	&.toggled{
+		border-bottom: 1px solid $color__border;
+	}
 
 	ul {
 		list-style: none;
 		margin: 0;
-		padding-left: 0;
+		padding: 5px 0;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -57,7 +61,9 @@
 		display: block;
 		text-decoration: none;
 		padding: 7px 15px;
-		border-bottom: 1px solid $color__border;
+		// text-align: center;
+		color: $color__text-title;
+		@include font-size( 1.6 );
 	}
 
 	.current_page_item > a,
