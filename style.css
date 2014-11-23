@@ -524,6 +524,8 @@ a:hover, a:focus, a:active {
   display: block;
   float: left;
   width: 100%;
+  border-top: 1px solid #EFEFEF;
+  background: #fafafa;
 }
 .main-navigation ul {
   list-style: none;
@@ -552,19 +554,16 @@ a:hover, a:focus, a:active {
   left: auto;
 }
 .main-navigation li {
-  float: left;
   position: relative;
 }
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 7px 15px;
+  border-bottom: 1px solid #EFEFEF;
 }
 
 /* Small menu */
-.menu-toggle {
-  display: none;
-}
-
 @media screen and (max-width: 600px) {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
@@ -766,7 +765,6 @@ body {
 
 #masthead {
   background: white;
-  border-bottom: 1px solid #EFEFEF;
 }
 #masthead .site-title {
   float: left;
@@ -781,7 +779,26 @@ body {
 }
 
 #site-navigation {
-  display: none;
+  position: relative;
+}
+#site-navigation .menu-toggle {
+  width: 32px;
+  height: 32px;
+  border: none;
+  font-size: 32px;
+  font-size: 3.2rem;
+  padding: 0;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  box-shadow: none;
+  position: absolute;
+  top: -40px;
+  right: 15px;
+  overflow: hidden;
+  background: white;
+  color: #725025;
 }
 
 .page-header {

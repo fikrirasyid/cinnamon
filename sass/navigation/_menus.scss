@@ -3,6 +3,8 @@
 	display: block;
 	float: left;
 	width: 100%;
+	border-top: 1px solid $color__border;
+	background: $color__menu-background;
 
 	ul {
 		list-style: none;
@@ -43,16 +45,19 @@
 			left: auto;
 		}
 	}
+
 	li {
-		float: left;
 		position: relative;
 
 		&:hover > a {
 		}
 	}
+
 	a {
 		display: block;
 		text-decoration: none;
+		padding: 7px 15px;
+		border-bottom: 1px solid $color__border;
 	}
 
 	.current_page_item > a,
@@ -63,7 +68,7 @@
 
 /* Small menu */
 .menu-toggle {
-	display: none;
+	// display: none;
 }
 
 @media screen and (max-width: 600px) {

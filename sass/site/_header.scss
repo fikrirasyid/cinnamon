@@ -5,7 +5,6 @@ body{
 
 #masthead{
 	background: white;
-	border-bottom: 1px solid $color__border;
 
 	.site-title{
 		float:left;
@@ -21,7 +20,23 @@ body{
 }
 
 #site-navigation{
-	display: none;
+	position: relative;
+
+	.menu-toggle{
+		width: 32px;
+		height: 32px;
+		border: none;
+		@include font-size( 3.2 );
+		padding: 0;
+		@include border-radius( 0 );
+		box-shadow: none;
+		position: absolute;
+		top: -40px;
+		right: 15px;
+		overflow: hidden;
+		background: white;
+		color: $color__link;
+	}
 }
 
 .page-header{

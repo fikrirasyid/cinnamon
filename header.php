@@ -30,7 +30,7 @@ global $paged;
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'cinnamon' ); ?></button>
+				<button class="menu-toggle dashicons dashicons-menu"><?php _e( 'Primary Menu', 'cinnamon' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->		
 		</div>
