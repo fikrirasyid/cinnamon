@@ -10,32 +10,53 @@
 		border-bottom: 1px solid $color__border;
 	}
 
+	.nav-menu{
+		display: none;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
-		padding: 5px 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
+		ul {	
 
 			li {
-				&:hover > ul {
-					left: 100%;
+				padding-left: 30px;
+
+				&:last-child{
+					a{						
+						border-bottom: 1px dashed $color__border;
+					}
+				}
+
+				a{
+					border-top: 1px dashed $color__border;
+					@include font-size( 1.3 );
+					padding: 4px 15px;
+					opacity: .8;
+				}
+
+				ul{
+					border-top: 1px dashed $color__border;
+
+					li{
+						&:first-child{
+							a{
+								border-top: 0;
+							}
+						}
+
+						&:last-child{
+							a{
+								border-bottom: 0;
+							}
+						}
+					}
 				}
 			}
 
 			a {
-				width: 200px;
+				display: block;
 			}
 
 			:hover > a {
@@ -81,10 +102,6 @@
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
 	}
 }
 
