@@ -578,12 +578,11 @@ a:hover, a:focus, a:active {
 }
 
 /* Small menu */
-@media screen and (max-width: 600px) {
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    display: block;
-  }
+.menu-toggle,
+.main-navigation.toggled .nav-menu {
+  display: block;
 }
+
 /**
 * Older / Newer navigation
 */
