@@ -102,6 +102,8 @@ function cinnamon_scripts() {
 	
 	wp_enqueue_style( 'cinnamon-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'cinnamon-script', get_template_directory_uri() . '/js/cinnamon.js', array( 'jquery' ), '20141201', true );
+
 	wp_enqueue_script( 'cinnamon-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'cinnamon-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

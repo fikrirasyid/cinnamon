@@ -96,6 +96,14 @@ body{
 * Desktop Adjustment
 */
 @media screen and ( min-width: $size__breakpoint-desktop ){
+	#masthead{
+		border-bottom: 1px solid $color__border;
+	}
+	
+	.site-branding{
+		float: left;
+	}
+
 	.page-header{
 		padding: 100px 10px 120px;
 

@@ -601,6 +601,114 @@ a:hover, a:focus, a:active {
   border-radius: 4px;
 }
 
+/**
+* Desktop Adjustment
+*/
+@media screen and (min-width: 960px) {
+  #site-navigation.main-navigation {
+    border-top: none;
+  }
+  #site-navigation.main-navigation.toggled {
+    border-top: 1px solid #EFEFEF;
+  }
+
+  .not-touch-device #site-navigation {
+    float: right;
+    width: auto;
+    margin-top: 6px;
+    background: transparent;
+  }
+  .not-touch-device #site-navigation .menu-toggle {
+    display: none;
+  }
+  .not-touch-device #site-navigation.main-navigation {
+    display: block;
+    clear: none;
+  }
+  .not-touch-device #site-navigation.main-navigation .nav-menu {
+    display: block;
+  }
+  .not-touch-device #site-navigation.main-navigation ul {
+    position: relative;
+    /**
+    * Hover state
+    */
+  }
+  .not-touch-device #site-navigation.main-navigation ul li {
+    display: inline-block;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li.menu-item-has-children > a {
+    position: relative;
+    padding-right: 20px;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li.menu-item-has-children > a:after {
+    content: "\f347";
+    font-family: dashicons;
+    font-size: 16px;
+    position: absolute;
+    top: 9px;
+    right: 0;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li a {
+    padding-bottom: 11px;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li a:hover {
+    text-decoration: underline;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li li.menu-item-has-children > a:after {
+    content: "\f345";
+    top: 5px;
+    right: 5px;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li li a {
+    padding-bottom: 4px;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li li a:hover {
+    background: #fafafa;
+    text-decoration: none;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul {
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: -1px;
+    background: white;
+    z-index: 30;
+    width: 180px;
+    border: 1px solid #EFEFEF;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul li a,
+  .not-touch-device #site-navigation.main-navigation ul ul li:first-child a,
+  .not-touch-device #site-navigation.main-navigation ul ul li:last-child a {
+    border-top: none;
+    border-bottom: none;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul li {
+    padding-left: 0;
+    display: block;
+    border-bottom: 1px solid #EFEFEF;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul li:last-child {
+    border-bottom: none;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul li a {
+    font-size: 16px;
+    font-size: 1.6rem;
+    display: block;
+    opacity: 1;
+  }
+  .not-touch-device #site-navigation.main-navigation ul ul li ul {
+    border-top: none;
+    display: none;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li.hovered > ul {
+    display: block;
+  }
+  .not-touch-device #site-navigation.main-navigation ul li.hovered > ul li.hovered > ul {
+    top: 0;
+    left: 178px;
+  }
+}
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
@@ -862,6 +970,14 @@ body {
 * Desktop Adjustment
 */
 @media screen and (min-width: 960px) {
+  #masthead {
+    border-bottom: 1px solid #EFEFEF;
+  }
+
+  .site-branding {
+    float: left;
+  }
+
   .page-header {
     padding: 100px 10px 120px;
   }

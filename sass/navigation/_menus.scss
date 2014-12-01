@@ -117,3 +117,146 @@
 		@include border-radius( 4px );
 	}
 }
+
+/**
+* Desktop Adjustment
+*/
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	#site-navigation{
+		&.main-navigation{
+			border-top: none;
+
+			&.toggled{
+				border-top: 1px solid $color__border;
+			}
+		}
+	}
+
+	.not-touch-device{
+		#site-navigation{
+			float: right;
+			width: auto;
+			margin-top: 6px;
+			background: transparent;
+
+			.menu-toggle{
+				display: none;
+			}
+
+			&.main-navigation{
+				display: block;
+				clear: none;
+
+				.nav-menu{
+					display: block;
+				}
+
+				ul{
+					position: relative;
+
+					li{
+						display: inline-block;
+
+						&.menu-item-has-children{
+							> a{
+								position: relative;
+								padding-right: 20px;
+
+								&:after{
+									content: "\f347";
+									@include dashicons( 16px );
+									position: absolute;
+									top: 9px;
+									right: 0;
+								}
+							}
+						}
+
+						a{
+							padding-bottom: 11px;
+
+							&:hover{
+								text-decoration: underline;
+							}
+						}
+
+						li{
+							&.menu-item-has-children > a{
+								// padding-right: 15px;
+
+								&:after{
+									content: "\f345";
+									top: 5px;
+									right: 5px;
+								}
+							}
+
+							a{
+								padding-bottom: 4px;
+
+								&:hover{
+									background: #fafafa;
+									text-decoration: none;
+								}
+							}
+						}
+					}
+
+					ul{
+						display: none;
+						position: absolute;
+						top: 46px;
+						left: -1px;
+						background: white;
+						z-index: 30; // should be higher than .page-header .background & .page-header .page-title, .page-header .page-description
+						width: 180px;
+						border: 1px solid $color__border;
+
+
+						li,
+						li:first-child,
+						li:last-child{
+							a{
+								border-top: none;
+								border-bottom: none;
+							}
+						}
+
+						li{
+							padding-left: 0;
+							display: block;
+							border-bottom: 1px solid $color__border;
+
+							&:last-child{
+								border-bottom: none;
+							}
+
+							a{
+								@include font-size( 1.6 );
+								display: block;
+								opacity: 1;
+							}
+
+							ul{
+								border-top: none;
+								display: none;
+							}
+						}
+					}
+					
+					/**
+					* Hover state
+					*/
+					li.hovered > ul{
+						display: block;
+
+						li.hovered > ul{
+							top: 0;
+							left: 178px;
+						}
+					}
+				}
+			}		
+		}
+	}
+}
