@@ -983,6 +983,12 @@ body {
   z-index: 1;
   opacity: .3;
 }
+.page-header.entry-featured-image-wrap {
+  height: 250px;
+}
+.page-header.entry-featured-image-wrap .background {
+  opacity: 1;
+}
 .page-header .page-title,
 .page-header .page-description {
   position: relative;
@@ -1013,6 +1019,10 @@ body {
   #masthead .site-title {
     padding-left: 35px;
   }
+
+  .page-header.entry-featured-image-wrap {
+    height: 400px;
+  }
 }
 /**
 * Desktop Adjustment
@@ -1028,6 +1038,9 @@ body {
 
   .page-header {
     padding: 100px 10px 120px;
+  }
+  .page-header.entry-featured-image-wrap {
+    height: 550px;
   }
   .page-header .page-title {
     font-size: 36px;

@@ -57,6 +57,14 @@ body{
 		opacity: .3;
 	}
 
+	&.entry-featured-image-wrap{
+		height: 250px;
+
+		.background{
+			opacity: 1;
+		}
+	}
+
 	.page-title,
 	.page-description{
 		position: relative;
@@ -90,6 +98,12 @@ body{
 			padding-left: 35px;
 		}
 	}
+
+	.page-header{
+		&.entry-featured-image-wrap{
+			height: 400px;			
+		}
+	}
 }
 
 /**
@@ -106,6 +120,10 @@ body{
 
 	.page-header{
 		padding: 100px 10px 120px;
+
+		&.entry-featured-image-wrap{
+			height: 550px;
+		}
 
 		.page-title{
 			@include font-size( 3.6 );

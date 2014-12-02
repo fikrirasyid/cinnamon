@@ -115,6 +115,26 @@ global $paged;
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cinnamon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
+
+	<?php elseif ( is_singular() || is_page() ) : // Search Template ?>
+
+		<?php global $post; ?>
+		
+		<?php if( has_post_thumbnail( $post->ID ) ) : 
+			$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+
+			if( isset( $featured_image_url[0] ) ) :
+			?>
+
+			<header class="page-header entry-featured-image-wrap">
+				<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
+			</header><!-- .page-header -->	
+
+			<?php 
+			endif; 
+		endif; 
+		?>
+
 	<?php elseif ( is_404() ) : // Search Template ?>
 
 				<header class="page-header">
