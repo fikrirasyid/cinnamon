@@ -737,14 +737,14 @@ a:hover, a:focus, a:active {
     opacity: 1;
   }
   .not-touch-device #site-navigation.main-navigation ul ul li ul {
-    border-top: none;
+    border-top: 1px solid #EFEFEF;
     display: none;
   }
   .not-touch-device #site-navigation.main-navigation ul li.hovered > ul {
     display: block;
   }
   .not-touch-device #site-navigation.main-navigation ul li.hovered > ul li.hovered > ul {
-    top: 0;
+    top: -1px;
     left: 178px;
   }
 }

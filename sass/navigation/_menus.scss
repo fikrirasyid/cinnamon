@@ -238,7 +238,7 @@
 							}
 
 							ul{
-								border-top: none;
+								border-top: 1px solid $color__border;
 								display: none;
 							}
 						}
@@ -251,7 +251,7 @@
 						display: block;
 
 						li.hovered > ul{
-							top: 0;
+							top: -1px;
 							left: 178px;
 						}
 					}
