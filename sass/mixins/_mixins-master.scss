@@ -42,3 +42,17 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
+// Tablet typography
+@mixin font-size-tablet( $size ){
+	@media screen and ( min-width: $size__breakpoint-tablet ){
+		@include font-size( $size );
+	}		
+}
+
+// Desktop typography
+@mixin font-size-desktop( $size ){
+	@media screen and ( min-width: $size__breakpoint-desktop ){
+		@include font-size( $size );
+	}	
+}

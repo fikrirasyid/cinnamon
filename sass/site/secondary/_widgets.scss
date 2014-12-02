@@ -6,6 +6,8 @@
 	padding: 15px;
 	border-bottom: 1px solid $color__border;
 
+	@include font-size-desktop( 1.4 );
+
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
@@ -27,6 +29,8 @@
 
 .widget-title{
 	@include font-size( 1.6 );
+	@include font-size-desktop( 2.2 );
+		
 	font-weight: lighter;
 	margin-bottom: 10px;
 }
@@ -73,10 +77,9 @@
 		border-bottom: none;
 		padding-right: 0;
 		padding-left: 0;
-		@include font-size( 1.4 );
 	}
 
 	.widget-title{
-		@include font-size( 1.8 );
+		margin-bottom: 5px;
 	}
 }
