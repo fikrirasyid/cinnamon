@@ -100,7 +100,7 @@ add_action( 'widgets_init', 'cinnamon_widgets_init' );
 function cinnamon_scripts() {
 	wp_enqueue_style( 'cinnamon-google-font', 'http://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic' );
 	
-	wp_enqueue_style( 'cinnamon-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'cinnamon-style', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
 
 	wp_enqueue_script( 'cinnamon-script', get_template_directory_uri() . '/js/cinnamon.js', array( 'jquery' ), '20141201', true );
 
