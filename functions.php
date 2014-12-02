@@ -69,7 +69,7 @@ function cinnamon_setup() {
 
 	// Adding editor style
 	add_editor_style( array(
-		'http://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic',
+		'http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
 		'editor.css'
 	) );
 }

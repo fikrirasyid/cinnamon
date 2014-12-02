@@ -14,7 +14,9 @@
 @import "typography/typography";
 
 body#tinymce{
-	padding: 20px 20px 0 !important;
+	padding: 30px 30px 0 !important;
 	max-width: 660px;
 	@include copy;
+	font-size: 18px;
+	color: darken( $color__text-main, 15% );
 }

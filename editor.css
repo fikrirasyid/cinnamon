@@ -314,8 +314,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body#tinymce {
-  padding: 20px 20px 0 !important;
+  padding: 30px 30px 0 !important;
   max-width: 660px;
+  font-size: 18px;
+  color: #565656;
 }
 body#tinymce h1 {
   font-weight: 900;
