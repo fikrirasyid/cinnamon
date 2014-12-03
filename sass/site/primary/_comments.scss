@@ -1,5 +1,8 @@
 .comments-title{
 	@include font-size( 1.6 );
+	@include font-size( 2 );
+	@include font-size( 2.2 );
+
 	font-weight: 900;
 	color: $color__text-title;
 	padding: 30px 15px;
@@ -95,6 +98,9 @@
 
 #reply-title{
 	@include font-size( 1.6 );
+	@include font-size-tablet( 2 );
+	@include font-size-desktop( 2.2 );
+
 	color: $color__text-title;
 	font-weight: 900;
 	margin-bottom: 20px;
@@ -136,7 +142,6 @@
 @media screen and ( min-width: $size__breakpoint-tablet ){
 	.comments-title{
 		padding: 30px 33px;
-		@include font-size( 2 );
 	}
 
 	.comment-body{
@@ -156,10 +161,6 @@
 
 	#respond{
 		padding: 30px 33px;
-	}
-
-	#reply-title{
-		@include font-size( 2 );
 	}
 
 	.reply{

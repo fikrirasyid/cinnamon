@@ -1354,6 +1354,10 @@ body {
 .comments-title {
   font-size: 16px;
   font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
+  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 900;
   color: #505050;
   padding: 30px 15px;
@@ -1452,6 +1456,18 @@ body {
   padding-right: 90px;
   line-height: 1.2;
 }
+@media screen and (min-width: 760px) {
+  #reply-title {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  #reply-title {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
+}
 
 #cancel-comment-reply-link {
   position: absolute;
@@ -1485,8 +1501,6 @@ body {
 @media screen and (min-width: 760px) {
   .comments-title {
     padding: 30px 33px;
-    font-size: 20px;
-    font-size: 2rem;
   }
 
   .comment-body {
@@ -1503,11 +1517,6 @@ body {
 
   #respond {
     padding: 30px 33px;
-  }
-
-  #reply-title {
-    font-size: 20px;
-    font-size: 2rem;
   }
 
   .reply {
