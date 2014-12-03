@@ -1635,6 +1635,8 @@ object {
 
 .wp-caption-text {
   text-align: center;
+  font-size: .8em;
+  color: #afafaf;
 }
 
 /*--------------------------------------------------------------
