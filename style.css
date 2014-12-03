@@ -984,10 +984,41 @@ body {
   opacity: .3;
 }
 .page-header.entry-featured-image-wrap {
-  height: 250px;
+  padding: 100px 10px 110px;
 }
 .page-header.entry-featured-image-wrap .background {
   opacity: 1;
+}
+.page-header.entry-featured-image-wrap .background:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-9 */
+}
+.page-header.entry-featured-image-wrap .page-title,
+.page-header.entry-featured-image-wrap .page-description {
+  color: white;
+  text-shadow: 0 1px 2px #333;
+}
+.page-header.entry-featured-image-wrap .page-title a,
+.page-header.entry-featured-image-wrap .page-description a {
+  color: white;
 }
 .page-header .page-title,
 .page-header .page-description {
@@ -997,6 +1028,7 @@ body {
 .page-header .page-title {
   font-size: 28px;
   font-size: 2.8rem;
+  line-height: 1.2;
   font-weight: 900;
   color: #505050;
 }
@@ -1019,10 +1051,6 @@ body {
   #masthead .site-title {
     padding-left: 35px;
   }
-
-  .page-header.entry-featured-image-wrap {
-    height: 400px;
-  }
 }
 /**
 * Desktop Adjustment
@@ -1040,15 +1068,23 @@ body {
     padding: 100px 10px 120px;
   }
   .page-header.entry-featured-image-wrap {
-    height: 550px;
+    padding: 180px 10px 200px;
   }
   .page-header .page-title {
     font-size: 36px;
     font-size: 3.6rem;
+    display: block;
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .page-header .page-description {
     font-size: 24px;
     font-size: 2.4rem;
+    display: block;
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .home .page-header {
@@ -1182,6 +1218,13 @@ body {
     font-size: 1.7rem;
   }
 }
+.hentry .entry-footer .posted-on {
+  display: block;
+  font-weight: bold;
+  margin: 10px -15px 0;
+  padding: 10px 15px 0;
+  border-top: 1px solid #EFEFEF;
+}
 .hentry .tags-links {
   display: block;
   border-top: 1px solid #EFEFEF;
@@ -1293,6 +1336,7 @@ body {
   .hentry {
     padding: 20px 33px;
   }
+  .hentry .entry-footer .posted-on,
   .hentry .tags-links {
     margin: 10px -33px 0;
     padding: 10px 33px 0;
@@ -1334,10 +1378,6 @@ body {
   .single .hentry .entry-subtitle,
   .page .hentry .entry-subtitle {
     margin-top: 8px;
-  }
-  .single .hentry .entry-content,
-  .page .hentry .entry-content {
-    margin-top: 50px;
   }
 }
 /*--------------------------------------------------------------

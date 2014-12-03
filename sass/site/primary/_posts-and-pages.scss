@@ -114,6 +114,16 @@
 		@include font-size-desktop( 1.7 );	
 	}
 
+	.entry-footer{
+		.posted-on{
+			display: block;
+			font-weight: bold;
+			margin: 10px -15px 0;
+			padding: 10px 15px 0;
+			border-top: 1px solid $color__border;
+		}		
+	}
+
 	.tags-links{
 		display: block;
 		border-top: 1px solid $color__border;
@@ -224,7 +234,8 @@
 
 	.hentry{
 		padding: 20px 33px;		
-
+		
+		.entry-footer .posted-on,
 		.tags-links{
 			margin: 10px -33px 0;
 			padding: 10px 33px 0;
@@ -273,10 +284,6 @@
 		.hentry{
 			.entry-subtitle{
 				margin-top: 8px;
-			}
-
-			.entry-content{
-				margin-top: 50px;			
 			}
 		}
 	}

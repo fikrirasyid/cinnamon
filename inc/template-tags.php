@@ -100,7 +100,15 @@ function cinnamon_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	if( is_singular() ){
+
+		$posted_on = __( 'Posted on: ', 'cinnamon' ) . '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+
+	} else {
+
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+
+	}
 
 	echo '<span class="posted-on">' . $posted_on . '</span>';
 
@@ -114,11 +122,17 @@ if ( ! function_exists( 'cinnamon_entry_subtitle' ) ) :
 /**
  * Prints HTML "sub-title" if there's any subtitle plugin. If there's no subtitle plugin, print category elegantly (using ampersand for the last category)
  */
-function cinnamon_entry_subtitle(){
+function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
+
+	// If no post_id defined, assume that this is used inside the loop
+	if( ! $post_id ){
+		$post_id = get_the_ID();
+	}
+
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() && 'aside' != get_post_format() ) {
+	if ( 'post' == get_post_type( $post_id ) && 'aside' != get_post_format( $post_id ) ) {
 		// Get category list
-		$categories = get_the_category_list( __( ', ', 'cinnamon' ) );
+		$categories = get_the_category_list( __( ', ', 'cinnamon' ), '', $post_id );
 		
 		// Explode into array by comma
 		$categories_list = explode(', ', $categories );
@@ -169,7 +183,7 @@ function cinnamon_entry_subtitle(){
 			$the_categories = $categories;
 		}
 
-		printf( '<h3 class="entry-subtitle">' . __( 'on %1$s', 'cinnamon' ) . '</h3>', $the_categories );
+		printf( '<h3 class="'. $class  .'">' . __( 'on %1$s', 'cinnamon' ) . '</h3>', $the_categories );
 	}
 }
 endif;

@@ -38,11 +38,11 @@ global $paged;
 	
 	<?php if ( is_home() && 0 == $paged  ) : // Homepage ?>
 
-	<div class="page-header">
-		<div class="background"></div>
-		<h1 class="page-title"><?php bloginfo( 'name' ); ?></h1>
-		<h2 class="page-description"><?php bloginfo( 'description' ); ?></h2>
-	</div><!-- #home-cover -->
+		<div class="page-header">
+			<div class="background"></div>
+			<h1 class="page-title"><?php bloginfo( 'name' ); ?></h1>
+			<h2 class="page-description"><?php bloginfo( 'description' ); ?></h2>
+		</div><!-- #home-cover -->
 
 	<?php elseif ( is_archive() ) : // Archive Template ?>
 
@@ -115,24 +115,52 @@ global $paged;
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cinnamon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
-
 	<?php elseif ( is_singular() || is_page() ) : // Search Template ?>
 
 		<?php global $post; ?>
 		
-		<?php if( has_post_thumbnail( $post->ID ) ) : 
-			$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		<?php 
+			if( has_post_thumbnail( $post->ID ) ) : 
+				
+				$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
-			if( isset( $featured_image_url[0] ) ) :
-			?>
+				if( isset( $featured_image_url[0] ) ) :
+					?>
 
-			<header class="page-header entry-featured-image-wrap">
-				<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
-			</header><!-- .page-header -->	
+					<header class="page-header entry-featured-image-wrap">
+						<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
+						<h1 class="page-title"><?php echo get_the_title( $post->ID ); ?></h1>
+						<?php cinnamon_entry_subtitle( $post->ID, 'page-description' ); ?>						
+					</header><!-- .page-header -->	
 
-			<?php 
+					<?php 
+
+				else :
+
+					?>
+
+					<header class="page-header">
+						<div class="background"></div>
+						<h1 class="page-title"><?php echo get_the_title( $post->ID ); ?></h1>
+						<?php cinnamon_entry_subtitle( $post->ID, 'page-description' ); ?>						
+					</header><!-- .page-header -->	
+
+					<?php
+				endif; 
+
+				else :
+					
+				?>
+
+				<header class="page-header">
+					<div class="background"></div>
+					<h1 class="page-title"><?php echo get_the_title( $post->ID ); ?></h1>
+					<?php cinnamon_entry_subtitle( $post->ID, 'page-description' ); ?>						
+				</header><!-- .page-header -->	
+
+				<?php
+
 			endif; 
-		endif; 
 		?>
 
 	<?php elseif ( is_404() ) : // Search Template ?>
