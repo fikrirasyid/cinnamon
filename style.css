@@ -639,6 +639,10 @@ a:hover, a:focus, a:active {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
+.paging-navigation a:hover {
+  text-decoration: none;
+  border-color: #bf863e;
+}
 
 /**
 * Desktop Adjustment

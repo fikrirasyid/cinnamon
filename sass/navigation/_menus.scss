@@ -115,6 +115,11 @@
 		border: 1px solid $color__link;
 		padding: 7px 40px;
 		@include border-radius( 4px );
+
+		&:hover{
+			text-decoration: none;
+			border-color: $color__link-hover;
+		}
 	}
 }
 
