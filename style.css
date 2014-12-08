@@ -987,9 +987,6 @@ body {
   z-index: 1;
   opacity: .3;
 }
-.page-header.entry-featured-image-wrap {
-  padding: 100px 10px 110px;
-}
 .page-header.entry-featured-image-wrap .background {
   opacity: 1;
 }
@@ -1045,7 +1042,6 @@ body {
 
 .home .page-header {
   border: none;
-  padding-top: 55px;
 }
 
 /**
@@ -1054,6 +1050,18 @@ body {
 @media screen and (min-width: 760px) {
   #masthead .site-title {
     padding-left: 35px;
+  }
+
+  .page-header {
+    padding: 100px 10px;
+  }
+  .page-header .page-title {
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
+  .page-header .page-description {
+    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 /**
@@ -1069,14 +1077,11 @@ body {
   }
 
   .page-header {
-    padding: 100px 10px 120px;
-  }
-  .page-header.entry-featured-image-wrap {
-    padding: 180px 10px 200px;
+    padding: 160px 10px;
   }
   .page-header .page-title {
-    font-size: 36px;
-    font-size: 3.6rem;
+    font-size: 42px;
+    font-size: 4.2rem;
     display: block;
     width: 960px;
     margin-right: auto;
@@ -1089,10 +1094,6 @@ body {
     width: 960px;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  .home .page-header {
-    padding-top: 100px;
   }
 }
 /*--------------------------------------------------------------
