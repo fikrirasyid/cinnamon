@@ -47,6 +47,7 @@ global $paged;
 	<?php elseif ( is_archive() ) : // Archive Template ?>
 
 			<header class="page-header">
+				<div class="background"></div>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
