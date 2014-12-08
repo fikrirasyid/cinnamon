@@ -46,6 +46,23 @@
 		position: relative;
 		z-index: 20; // should be higher than .entry-featured-image
 
+		.entry-meta{	
+			@include font-size( 1.1 );
+			@include font-size-tablet( 1.2 );
+			@include font-size-desktop( 1.3 );
+			text-transform: uppercase;
+
+			a{
+				font-weight: bold;
+				text-decoration: none;
+				// color: $color__accent;
+			}
+
+			.edit-link{
+				float: right;
+			}
+		}
+
 		.edit-link{
 			display: inline-block;
 
@@ -57,24 +74,6 @@
 				font-weight: normal;
 			}
 		}		
-	}
-
-	.entry-meta{
-		margin-bottom: 5px;
-		
-		a{
-			@include font-size( 1.2 );
-			font-weight: lighter;
-			text-decoration: none;
-			color: $color__text-date;
-
-
-			@include font-size-tablet( 1.3 );
-		}
-
-		.edit-link{
-			float: right;
-		}
 	}
 
 	.entry-title{
@@ -96,7 +95,7 @@
 	}
 
 	.entry-subtitle{
-		@include font-size( 1.6 );
+		@include font-size( 1.8 );
 		@include font-size-desktop( 1.8 );
 
 		font-weight: lighter;
@@ -119,12 +118,28 @@
 	}
 
 	.entry-footer{
+		display: block;
+		@include font-size( 1.2 );
+		@include font-size-tablet( 1.3 );
+
+		.entry-meta{	
+			@include font-size( 1.2 );
+			text-transform: uppercase;
+
+			a{
+				font-weight: lighter;
+				text-decoration: none;
+				color: $color__text-date;
+			}
+		}		
+
 		.posted-on{
 			display: block;
 			font-weight: bold;
-			margin: 10px -15px 0;
+			margin: 0 -15px -2px;
 			padding: 10px 15px 0;
-			border-top: 1px solid $color__border;
+			letter-spacing: 1px;
+			@include font-size( 1.1 );
 		}		
 	}
 
@@ -136,8 +151,9 @@
 
 		.section-title{
 			display: block;
-			margin-bottom: 5px;
-			color: $color__text-title;
+			margin-bottom: 3px;
+			@include font-size( 1.4 );
+			font-weight: bold;
 		}
 
 		a{
@@ -169,7 +185,8 @@
 }
 
 .post-navigation{
-	border-bottom: 1px solid $color__border;
+	background: $color__secondary-bg;
+	box-shadow: inset 0 0 10px darken( $color__secondary-bg, 2% );
 
 	.nav{
 		display: inline-block;
@@ -182,6 +199,7 @@
 			display: block;
 			padding: 15px;
 			color: $color__text-light;
+			border-bottom: 1px solid $color__border;
 		}
 
 		.meta-label{
@@ -212,6 +230,32 @@
 		.entry-subtitle{
 			@include font-size-desktop( 2 );			
 		}	
+
+		.entry-content{
+			margin-top: 0;
+
+			a{
+				text-decoration: underline;
+			}
+
+			// Civil Footnotes support
+			sup{
+				a{
+					text-decoration: none;
+				}
+			}
+
+			.footnotes{
+				li{
+					@include font-size-tablet( 1.3 );
+					@include font-size-desktop( 1.4 );
+				}
+
+				.backlink{
+					text-decoration: none;
+				}
+			}
+		}
 	}
 }
 
@@ -248,6 +292,7 @@
 
 	.post-navigation{
 		position: relative;
+		border-bottom: 1px solid $color__border;
 
 		&:before{
 			position: absolute;
@@ -264,7 +309,8 @@
 			vertical-align: top;
 
 			a{
-				padding: 15px 33px;
+				padding: 20px 33px;
+				border-bottom: none;
 			}
 		}
 
@@ -280,15 +326,21 @@
 @media screen and ( min-width: $size__breakpoint-desktop ){
 	.hentry{
 		padding-top: 40px;
-		padding-bottom: 45px;
+		padding-bottom: 15px;
 	}	
 
 	.single,
 	.page{
 		.hentry{
+			padding-top: 30px;
+
 			.entry-subtitle{
 				margin-top: 8px;
 			}
 		}
+	}
+
+	.post-navigation{
+		border-left: 1px solid $color__border;
 	}
 }

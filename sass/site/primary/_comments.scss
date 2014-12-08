@@ -79,16 +79,19 @@
 
 #cancel-comment-reply-link,
 .comment-reply-link{
-	border: 1px solid $color__link;
+	border: 1px solid $color__text-light;
+	color: $color__text-light;
 	padding: 3px 15px;
 	line-height: 1;
 	@include border-radius( 4px );
 	@include font-size( 1.1 );
+	@include font-size-desktop( 1.3 );
 	font-weight: normal;
 
 	&:hover{
 		text-decoration: none;
-		border-color: $color__link-hover;
+		border-color: $color__link;
+		color: $color__link;
 	}
 
 	&:active{
@@ -98,6 +101,7 @@
 
 .comment-content a {
 	word-wrap: break-word;
+	text-decoration: underline;
 }
 .bypostauthor {
 	display: block;
@@ -121,6 +125,11 @@
 	top: -1px;
 	right: 0;
 	padding: 4px 10px 5px;
+	@include font-size-desktop( 1.3 );
+
+	&:hover{
+		color: $color__link;
+	}
 }
 
 #respond{
@@ -171,6 +180,11 @@
 		.children{
 			margin-left: 90px;
 		}
+	}
+
+	#cancel-comment-reply-link,
+	.comment-reply-link{
+		@include font-size( 1.3 );
 	}
 
 	#respond{

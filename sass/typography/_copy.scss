@@ -7,7 +7,9 @@
 		margin-top: 1.7em;
 		margin-bottom: .7em;
 
-		@include font-size-desktop( 3 );
+		@include font-size( 2.8 );
+		@include font-size-tablet( 3.2 );
+		@include font-size-desktop( 4.2 );
 	}
 
 	h2{
@@ -18,7 +20,9 @@
 		margin-top: 1.7em;
 		margin-bottom: .7em;
 
-		@include font-size-desktop( 2.6 );
+		@include font-size( 2.4 );
+		@include font-size-tablet( 2.6 );
+		@include font-size-desktop( 3.6 );
 	}
 
 	h3{
@@ -29,18 +33,21 @@
 		margin-top: 1.7em;
 		margin-bottom: .7em;
 
-		@include font-size-desktop( 2 );
+
+		@include font-size( 2.2 );
+		@include font-size-tablet( 2.2 );
+		@include font-size-desktop( 3.2 );
 	}
 
 	h4{
-		@include font-size( 1.6 );
 		font-weight: lighter;
-		color: $color__text-light;		
+		color: $color__text-title;
 		line-height: 1.4;
-		margin-top: 1.7em;
+		margin-top: 1em;
 		margin-bottom: .7em;
 
-		@include font-size-desktop( 1.7 );
+		@include font-size( 2 );
+		@include font-size-desktop( 2.4 );
 	}
 
 	p {

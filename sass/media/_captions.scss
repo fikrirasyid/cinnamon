@@ -13,6 +13,7 @@
 
 .wp-caption-text {
 	text-align: center;
-	font-size: .8em;
-	color: lighten( $color__text-main, 20% );
+	font-size: .75em;
+	line-height: 1.4;
+	color: $color__text-light;
 }

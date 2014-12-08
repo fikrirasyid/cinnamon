@@ -42,7 +42,7 @@ body{
 .page-header{
 	position: relative;
 	text-align: center;
-	padding: 60px 10px 70px;
+	padding: 90px 15px 100px;
 	border-bottom: 1px solid $color__border;
 
 	.background{
@@ -149,7 +149,7 @@ body{
 	}
 
 	.page-header{
-		padding: 160px 10px;
+		padding: 200px 10px;
 
 		.page-title{
 			@include font-size( 4.2 );

@@ -100,20 +100,15 @@ a img {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-body#tinymce{
-  font-family: "Lato", Helvetica, Arial, sans-serif;  
-  font-weight: 400;
-}
-
 body,
 button,
 input,
 select,
 textarea {
-  color: #7C7C7C;
+  color: #5F5E5E;
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
 }
 
@@ -140,16 +135,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   font-size: 24px;
   font-size: 2.4rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.2;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+@media screen and (min-width: 760px) {
+  .comment-content h1,
+  .entry-content h1 {
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
 }
 @media screen and (min-width: 960px) {
   .comment-content h1,
   .entry-content h1 {
-    font-size: 30px;
-    font-size: 3rem;
+    font-size: 42px;
+    font-size: 4.2rem;
   }
 }
 .comment-content h2,
@@ -157,16 +161,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   font-size: 19px;
   font-size: 1.9rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.3;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 24px;
+  font-size: 2.4rem;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 760px) {
   .comment-content h2,
   .entry-content h2 {
     font-size: 26px;
     font-size: 2.6rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .comment-content h2,
+  .entry-content h2 {
+    font-size: 36px;
+    font-size: 3.6rem;
   }
 }
 .comment-content h3,
@@ -174,33 +187,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   font-size: 16px;
   font-size: 1.6rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.3;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+@media screen and (min-width: 760px) {
+  .comment-content h3,
+  .entry-content h3 {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
 }
 @media screen and (min-width: 960px) {
   .comment-content h3,
   .entry-content h3 {
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 32px;
+    font-size: 3.2rem;
   }
 }
 .comment-content h4,
 .entry-content h4 {
-  font-size: 16px;
-  font-size: 1.6rem;
   font-weight: lighter;
-  color: #B9B1AF;
+  color: #2d1f0f;
   line-height: 1.4;
-  margin-top: 1.7em;
+  margin-top: 1em;
   margin-bottom: .7em;
+  font-size: 20px;
+  font-size: 2rem;
 }
 @media screen and (min-width: 960px) {
   .comment-content h4,
   .entry-content h4 {
-    font-size: 17px;
-    font-size: 1.7rem;
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 .comment-content p,
@@ -211,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content b,
 .entry-content strong {
   font-weight: 900;
-  color: #505050;
+  color: #2d1f0f;
 }
 .comment-content dfn, .comment-content cite, .comment-content em, .comment-content i,
 .entry-content dfn,
@@ -226,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: lighter;
-  color: #B9B1AF;
+  color: #ababab;
   line-height: 1.4;
 }
 @media screen and (min-width: 960px) {
@@ -241,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em;
   font-style: italic;
   line-height: 1.4;
-  color: #505050;
+  color: #2d1f0f;
 }
 .comment-content pre,
 .entry-content pre {
@@ -263,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   font-size: 1.5rem;
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  color: #505050;
+  color: #2d1f0f;
 }
 .comment-content abbr, .comment-content acronym,
 .entry-content abbr,
@@ -322,66 +344,90 @@ body#tinymce {
   padding: 30px 30px 0 !important;
   max-width: 660px;
   font-size: 18px;
-  color: #565656;
+  color: #393838;
 }
 body#tinymce h1 {
   font-weight: 900;
   font-size: 24px;
   font-size: 2.4rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.2;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+@media screen and (min-width: 760px) {
+  body#tinymce h1 {
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
 }
 @media screen and (min-width: 960px) {
   body#tinymce h1 {
-    font-size: 30px;
-    font-size: 3rem;
+    font-size: 42px;
+    font-size: 4.2rem;
   }
 }
 body#tinymce h2 {
   font-weight: 900;
   font-size: 19px;
   font-size: 1.9rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.3;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 24px;
+  font-size: 2.4rem;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 760px) {
   body#tinymce h2 {
     font-size: 26px;
     font-size: 2.6rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  body#tinymce h2 {
+    font-size: 36px;
+    font-size: 3.6rem;
   }
 }
 body#tinymce h3 {
   font-weight: 900;
   font-size: 16px;
   font-size: 1.6rem;
-  color: #505050;
+  color: #2d1f0f;
   line-height: 1.3;
   margin-top: 1.7em;
   margin-bottom: .7em;
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+@media screen and (min-width: 760px) {
+  body#tinymce h3 {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
 }
 @media screen and (min-width: 960px) {
   body#tinymce h3 {
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 32px;
+    font-size: 3.2rem;
   }
 }
 body#tinymce h4 {
-  font-size: 16px;
-  font-size: 1.6rem;
   font-weight: lighter;
-  color: #B9B1AF;
+  color: #2d1f0f;
   line-height: 1.4;
-  margin-top: 1.7em;
+  margin-top: 1em;
   margin-bottom: .7em;
+  font-size: 20px;
+  font-size: 2rem;
 }
 @media screen and (min-width: 960px) {
   body#tinymce h4 {
-    font-size: 17px;
-    font-size: 1.7rem;
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 body#tinymce p {
@@ -389,7 +435,7 @@ body#tinymce p {
 }
 body#tinymce b, body#tinymce strong {
   font-weight: 900;
-  color: #505050;
+  color: #2d1f0f;
 }
 body#tinymce dfn, body#tinymce cite, body#tinymce em, body#tinymce i {
   font-style: italic;
@@ -399,7 +445,7 @@ body#tinymce blockquote {
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: lighter;
-  color: #B9B1AF;
+  color: #ababab;
   line-height: 1.4;
 }
 @media screen and (min-width: 960px) {
@@ -412,7 +458,7 @@ body#tinymce address {
   margin: 0 0 1em;
   font-style: italic;
   line-height: 1.4;
-  color: #505050;
+  color: #2d1f0f;
 }
 body#tinymce pre {
   background: #eee;
@@ -429,7 +475,7 @@ body#tinymce code, body#tinymce kbd, body#tinymce tt, body#tinymce var {
   font-size: 15px;
   font-size: 1.5rem;
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  color: #505050;
+  color: #2d1f0f;
 }
 body#tinymce abbr, body#tinymce acronym {
   border-bottom: 1px dotted #666;

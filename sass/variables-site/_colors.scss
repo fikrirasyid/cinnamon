@@ -12,7 +12,7 @@ $color__link: darken( $color__accent, 60% );
 $color__link-visited: darken( $color__accent, 50% );
 $color__link-hover: darken( $color__accent, 40% );
 $color__link-shadow: darken( $color__link, 20% );
-$color__text-main: #7C7C7C;
+$color__text-main: #5F5E5E;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -20,8 +20,8 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$color__text-title: #505050;
-$color__text-light: #B9B1AF;
+$color__text-title: darken( $color__accent, 78% );
+$color__text-light: lighten( $color__text-main, 30% );
 $color__text-date: #AFAFAF;
 $color__submit: #79726E;
 $color__border: #EFEFEF;
@@ -29,3 +29,5 @@ $color__border: #EFEFEF;
 $color__aside-bg: #FAFAFA;
 
 $color__menu-background: #FDFDFD;
+
+$color__secondary-bg: lighten( $color__accent, 10% );
