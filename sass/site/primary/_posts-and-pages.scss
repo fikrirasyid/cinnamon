@@ -88,6 +88,10 @@
 		a{
 			color: $color__text-title;
 			text-decoration: none;
+
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 

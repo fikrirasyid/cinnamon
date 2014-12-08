@@ -1189,6 +1189,9 @@ body {
   color: #505050;
   text-decoration: none;
 }
+.hentry .entry-title a:hover {
+  text-decoration: underline;
+}
 .hentry .entry-subtitle {
   font-size: 16px;
   font-size: 1.6rem;
