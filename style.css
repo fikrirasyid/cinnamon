@@ -1451,6 +1451,11 @@ body {
   color: #B9B1AF;
 }
 
+.pingback > .comment-body,
+.trackback > .comment-body {
+  padding-left: 15px;
+}
+
 #comment {
   margin-bottom: 18px;
 }
@@ -1549,6 +1554,11 @@ body {
   .comment-body .avatar {
     left: 33px;
     width: 60px;
+  }
+
+  .pingback > .comment-body,
+  .trackback > .comment-body {
+    padding-left: 33px;
   }
 
   .comment-list .children {

@@ -66,6 +66,13 @@
 	}
 }
 
+.pingback,
+.trackback{
+	> .comment-body{
+		padding-left: 15px;
+	}
+}
+
 #comment{
 	margin-bottom: 18px;
 }
@@ -150,6 +157,13 @@
 		.avatar{
 			left: 33px;
 			width: 60px;
+		}
+	}
+
+	.pingback,
+	.trackback{
+		> .comment-body{
+			padding-left: 33px;
 		}
 	}
 	
