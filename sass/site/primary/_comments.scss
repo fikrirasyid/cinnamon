@@ -31,6 +31,7 @@
 		position: absolute;
 		top: 0;
 		left: 10px;
+		@include border-radius( 50% );
 	}
 
 	.comment-identity{
