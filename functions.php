@@ -61,12 +61,6 @@ function cinnamon_setup() {
 		'aside',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'cinnamon_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	// Adding editor style
 	add_editor_style( array(
 		'http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
