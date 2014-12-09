@@ -113,6 +113,7 @@ global $paged;
 	<?php elseif ( is_search() ) : // Search Template ?>
 
 			<header class="page-header">
+				<div class="background"></div>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cinnamon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
@@ -167,6 +168,7 @@ global $paged;
 	<?php elseif ( is_404() ) : // Search Template ?>
 
 				<header class="page-header">
+					<div class="background"></div>
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'cinnamon' ); ?></h1>
 				</header><!-- .page-header -->
 
