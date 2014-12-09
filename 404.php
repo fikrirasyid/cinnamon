@@ -13,8 +13,7 @@ get_header(); ?>
 			<section class="error-404 not-found">
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cinnamon' ); ?></p>
-
+					
 					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>

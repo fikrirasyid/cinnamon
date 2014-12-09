@@ -867,20 +867,14 @@ a:hover, a:focus, a:active {
 #secondary {
   border-top: 1px solid #EFEFEF;
   background: #fffefd;
-  font-size: 14px;
-  font-size: 1.4rem;
 }
 
 .widget {
   padding: 15px;
   border-bottom: 1px solid #EFEFEF;
+  font-size: 14px;
+  font-size: 1.4rem;
   /* Make sure select elements fit in widgets */
-}
-@media screen and (min-width: 960px) {
-  .widget {
-    font-size: 14px;
-    font-size: 1.4rem;
-  }
 }
 .widget select {
   max-width: 100%;
@@ -896,6 +890,7 @@ a:hover, a:focus, a:active {
   color: #ababab;
 }
 
+.widgettitle,
 .widget-title {
   font-size: 19px;
   font-size: 1.9rem;
@@ -903,6 +898,7 @@ a:hover, a:focus, a:active {
   margin-bottom: 10px;
 }
 @media screen and (min-width: 960px) {
+  .widgettitle,
   .widget-title {
     font-size: 22px;
     font-size: 2.2rem;
@@ -1431,6 +1427,25 @@ body {
 }
 
 /**
+* Error 404 styling
+*/
+.error404 #primary {
+  text-align: center;
+}
+.error404 #primary .search-form {
+  padding: 15px 15px 16px;
+  border-bottom: 1px solid #EFEFEF;
+}
+.error404 #primary .search-form .search-field {
+  padding: 5px 10px;
+  margin-bottom: -2px;
+  vertical-align: top;
+}
+.error404 #primary .search-form .search-submit {
+  vertical-align: top;
+}
+
+/**
 * Tablet adjustment
 */
 @media screen and (min-width: 760px) {
@@ -1473,6 +1488,23 @@ body {
   .post-navigation .nav-next {
     text-align: right;
   }
+
+  /**
+  * Error 404 styling
+  */
+  .error404 #primary .search-form {
+    padding: 15px 30px 16px;
+    text-align: center;
+  }
+  .error404 #primary .search-form .search-field {
+    padding: 5px 10px;
+    vertical-align: top;
+    width: 400px;
+    margin-right: 10px;
+  }
+  .error404 #primary .search-form .search-submit {
+    vertical-align: top;
+  }
 }
 /**
 * Desktop Adjustment
@@ -1494,6 +1526,25 @@ body {
 
   .post-navigation {
     border-left: 1px solid #EFEFEF;
+  }
+
+  /**
+  * Error 404 styling
+  */
+  .error404 #content:before {
+    display: none;
+  }
+  .error404 #primary {
+    float: none;
+    display: block;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .error404 #primary .search-form {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: none;
   }
 }
 /*--------------------------------------------------------------

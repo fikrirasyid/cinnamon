@@ -1,14 +1,13 @@
 #secondary{
 	border-top: 1px solid $color__border;
 	background: $color__secondary-bg;
-	@include font-size( 1.4 );
 }
 
 .widget {
 	padding: 15px;
 	border-bottom: 1px solid $color__border;
 
-	@include font-size-desktop( 1.4 );
+	@include font-size( 1.4 );
 
 	/* Make sure select elements fit in widgets */
 	select {
@@ -29,6 +28,7 @@
 	}
 }
 
+.widgettitle,
 .widget-title{
 	@include font-size( 1.9 );
 	@include font-size-desktop( 2.2 );

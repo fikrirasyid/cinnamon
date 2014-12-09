@@ -169,7 +169,8 @@ global $paged;
 
 				<header class="page-header">
 					<div class="background"></div>
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'cinnamon' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Page Not Found', 'cinnamon' ); ?></h1>
+					<h2 class="page-description"><?php _e( 'Nothing was found at this location. Try one of the links below or a search:', 'cinnamon' ); ?></h2>
 				</header><!-- .page-header -->
 
 	<?php endif; ?>
