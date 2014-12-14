@@ -574,9 +574,6 @@ a {
   color: #725025;
   text-decoration: none;
 }
-a:visited {
-  color: #986b32;
-}
 a:hover, a:focus, a:active {
   color: #bf863e;
   text-decoration: underline;
@@ -894,6 +891,7 @@ a:hover, a:focus, a:active {
 .widget-title {
   font-size: 19px;
   font-size: 1.9rem;
+  color: #2d1f0f;
   font-weight: lighter;
   margin-bottom: 10px;
 }
@@ -943,7 +941,7 @@ a:hover, a:focus, a:active {
 @media screen and (min-width: 960px) {
   #secondary {
     border-top: none;
-    background: none;
+    background: none !important;
   }
 
   .widget {

@@ -32,6 +32,7 @@
 .widget-title{
 	@include font-size( 1.9 );
 	@include font-size-desktop( 2.2 );
+	color: $color__text-title;
 		
 	font-weight: lighter;
 	margin-bottom: 10px;
@@ -77,7 +78,7 @@
 @media screen and ( min-width: $size__breakpoint-desktop ){
 	#secondary{
 		border-top: none;
-		background: none;
+		background: none !important;
 	}
 
 	.widget{

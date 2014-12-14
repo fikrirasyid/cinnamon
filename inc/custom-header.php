@@ -49,7 +49,7 @@ function cinnamon_header_style() {
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
-		.page-header .background{
+		#page .page-header .background{
 			background: url( <?php echo $header_image; ?> ) no-repeat center center; 
 			background-size: cover;
 		}

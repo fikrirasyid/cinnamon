@@ -5,32 +5,20 @@
  */
 
 ( function( $ ) {
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
+	// Accent color.
+	wp.customize( 'accent_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
-		} );
-	} );
-	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
-		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
-				} );
-			} else {
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'auto',
-					'color': to,
-					'position': 'relative'
-				} );
-			}
+			
+			// Updating the color scheme
+			var accent_color = to.substr( 1 );
+
+			$.getJSON( cinnamon_customizer_params.generate_color_scheme_endpoint, { accent_color : accent_color }, function( data ){
+				if( true == data.status ){
+					$('body').append( '<style type="text/css" media="screen">'+data.colorscheme+'</style>');
+				} else {
+					alert( cinnamon_customizer_params.generate_color_scheme_error_message );
+				}
+			});
 		} );
 	} );
 } )( jQuery );

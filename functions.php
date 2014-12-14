@@ -75,6 +75,7 @@ add_action( 'after_setup_theme', 'cinnamon_setup' );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+if( ! function_exists( 'cinnamon_widgets_init' ) ) :
 function cinnamon_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'cinnamon' ),
@@ -86,11 +87,13 @@ function cinnamon_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
+endif;
 add_action( 'widgets_init', 'cinnamon_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
+if ( ! function_exists( 'cinnamon_scripts' ) ) :
 function cinnamon_scripts() {
 	wp_enqueue_style( 'cinnamon-google-font', 'http://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic' );
 	
@@ -106,7 +109,22 @@ function cinnamon_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+endif;
 add_action( 'wp_enqueue_scripts', 'cinnamon_scripts' );
+
+/**
+ * Display color scheme based on one accent color choosen by user
+ */
+if( ! function_exists( 'cinnamon_color_scheme' ) ) :
+function cinnamon_color_scheme(){
+	$color_scheme = get_theme_mod( 'color_scheme', false );
+
+	if( $color_scheme ){
+		wp_add_inline_style( 'cinnamon-style', $color_scheme );
+	}
+}
+endif;
+add_action( 'wp_enqueue_scripts', 'cinnamon_color_scheme' );
 
 /**
  * Implement the Custom Header feature.
