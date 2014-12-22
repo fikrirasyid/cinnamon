@@ -1516,7 +1516,7 @@ body {
 @media screen and (min-width: 960px) {
   .hentry {
     padding-top: 40px;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
   }
 
   .single .hentry,
