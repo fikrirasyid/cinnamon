@@ -230,11 +230,6 @@ function cinnamon_color_scheme_scss( $accent_color ){
 			}
 		}
 
-		.post-navigation{
-			background: $color__secondary-bg;
-			box-shadow: inset 0 0 10px darken( $color__secondary-bg, 2% );
-		}
-
 		// _copy 
 		.comment-content,
 		.entry-content{
