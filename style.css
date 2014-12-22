@@ -1996,3 +1996,19 @@ object {
 .entry-content ol.footnotes li p:last-child {
   margin-bottom: 0;
 }
+
+/**
+* Infinite Scroll
+*/
+@media screen and (min-width: 960px) {
+  #infinite-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    z-index: 20;
+  }
+  #infinite-footer .container {
+    border: none;
+    margin: 0 auto;
+    width: 960px !important;
+  }
+}
