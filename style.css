@@ -1825,6 +1825,17 @@ body {
     width: 670px;
   }
 
+  .page-template-temp-one-column-page #content:before {
+    display: none;
+  }
+  .page-template-temp-one-column-page #primary {
+    float: none;
+    display: block;
+    width: 740px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   #secondary {
     float: left;
     width: 250px;

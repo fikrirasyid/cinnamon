@@ -46,6 +46,21 @@
 		float: left;
 		width: 670px;
 	}
+	
+	// One column layout adjustment
+	.page-template-temp-one-column-page{
+		#content{
+			&:before{
+				display: none;
+			}
+		}
+
+		#primary{
+			float: none;
+			@include wrap( 740px );
+			// margin-left: 145px;
+		}
+	}
 
 	#secondary{
 		float: left;
