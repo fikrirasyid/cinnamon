@@ -1324,6 +1324,10 @@ body {
   display: inline-block;
   line-height: 1;
 }
+.hentry input[type="radio"],
+.hentry input[type="checkbox"] {
+  margin-right: 5px;
+}
 
 .byline,
 .updated:not(.published) {
@@ -2011,4 +2015,15 @@ object {
     margin: 0 auto;
     width: 960px !important;
   }
+}
+/**
+* Contact Form
+*/
+.contact-form .grunion-radio-label.radio,
+.contact-form .grunion-field-label.checkbox {
+  font-weight: normal;
+}
+
+.contact-submit {
+  margin-top: 30px;
 }
