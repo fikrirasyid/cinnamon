@@ -1733,6 +1733,9 @@ body {
 #respond .comment-form-url input {
   width: 100%;
 }
+#respond .form-submit {
+  margin-bottom: 30px;
+}
 
 /**
 * Tablet adjustment
