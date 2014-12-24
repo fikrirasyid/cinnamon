@@ -519,3 +519,6 @@ body#tinymce blockquote p {
   font-size: 21px;
   font-size: 2.1rem;
 }
+body#tinymce a {
+  color: #725025;
+}

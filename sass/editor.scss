@@ -25,4 +25,8 @@ body#tinymce{
 			@include font-size( 2.1 );
 		}
 	}
+
+	a{
+		color: $color__link;
+	}
 }
