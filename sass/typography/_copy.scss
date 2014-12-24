@@ -65,12 +65,12 @@
 
 	blockquote {
 		margin: 1.7em;
-		@include font-size( 1.6 );
+		@include font-size( 1.8 );
 		font-weight: lighter;
 		color: $color__text-light;
-		line-height: 1.4;
+		line-height: 1.6;
 
-		@include font-size-desktop( 2.2 );
+		@include font-size-desktop( 2.4 );
 	}
 
 	address {

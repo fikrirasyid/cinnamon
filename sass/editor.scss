@@ -19,4 +19,10 @@ body#tinymce{
 	@include copy;
 	font-size: 18px;
 	color: darken( $color__text-main, 15% );
+
+	blockquote{
+		p{		
+			@include font-size( 2.1 );
+		}
+	}
 }

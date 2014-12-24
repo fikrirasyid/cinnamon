@@ -245,17 +245,17 @@ h1, h2, h3, h4, h5, h6 {
 .comment-content blockquote,
 .entry-content blockquote {
   margin: 1.7em;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: lighter;
   color: #ababab;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 @media screen and (min-width: 960px) {
   .comment-content blockquote,
   .entry-content blockquote {
-    font-size: 22px;
-    font-size: 2.2rem;
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 .comment-content address,
@@ -442,16 +442,16 @@ body#tinymce dfn, body#tinymce cite, body#tinymce em, body#tinymce i {
 }
 body#tinymce blockquote {
   margin: 1.7em;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: lighter;
   color: #ababab;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 @media screen and (min-width: 960px) {
   body#tinymce blockquote {
-    font-size: 22px;
-    font-size: 2.2rem;
+    font-size: 24px;
+    font-size: 2.4rem;
   }
 }
 body#tinymce address {
@@ -514,4 +514,8 @@ body#tinymce ul li {
 }
 body#tinymce ol li {
   list-style: decimal;
+}
+body#tinymce blockquote p {
+  font-size: 21px;
+  font-size: 2.1rem;
 }
