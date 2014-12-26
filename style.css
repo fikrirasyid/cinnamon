@@ -922,6 +922,24 @@ a:hover, a:focus, a:active {
   right: 0;
 }
 
+/* RSS Widget */
+.widget_rss li {
+  margin-bottom: 20px;
+}
+.widget_rss li .rsswidget {
+  display: block;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #2d1f0f;
+}
+.widget_rss li .rss-date {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #ababab;
+}
+
 /**
 * Tablet adjustment
 */

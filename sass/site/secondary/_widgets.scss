@@ -59,6 +59,29 @@
 	}	
 }
 
+/* RSS Widget */
+.widget_rss{
+	li{
+		margin-bottom: 20px;
+
+		.rsswidget{
+			display: block;
+			@include font-size( 1.6 );
+			font-weight: bold;
+			line-height: 1.2;
+			color: $color__text-title;
+		}
+
+		.rss-date{
+			@include font-size( 1.2 );
+			color: $color__text-light;
+		}
+
+		.rssSummary{
+		}
+	}
+}
+
 /**
 * Tablet adjustment
 */
