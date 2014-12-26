@@ -185,6 +185,13 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 
 		printf( '<h3 class="'. $class  .'">' . __( 'on %1$s', 'cinnamon' ) . '</h3>', $the_categories );
 	}
+
+	// Jetpack Portfolio
+	if( 'jetpack-portfolio' == get_post_type( $post_id ) ){
+
+		the_terms( $post_id, 'jetpack-portfolio-type', '<h3 class="'. $class .'">', ', ', '</h3>' );
+
+	}
 }
 endif;
 
@@ -311,6 +318,12 @@ if( ! function_exists( 'cinnamon_page_header' ) ) :
  * Displaying page header appropriately
  */
 function cinnamon_page_header(){
+	// Page header isn't used on portfolio page due to the content's nature of portfolio
+	// featured image on portfolio is added to be seen, not an ornament / illustration
+	if( is_singular( 'jetpack-portfolio' ) ){
+		return;		
+	}
+
 	// Page / Singular's page header background is defined by featured image
 	if( is_singular() || is_page() ) :
 		global $post;
@@ -391,32 +404,21 @@ function cinnamon_page_header(){
 						elseif ( is_year() ) :
 							printf( __( 'Year: %s', 'cinnamon' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cinnamon' ) ) . '</span>' );
 
+						elseif( is_post_type_archive() ) :
+
+							$post_type 		= get_post_type();
+							$post_type_obj 	= get_post_type_object( $post_type );
+
+							echo $post_type_obj->labels->name;
+
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'cinnamon' );
 
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'cinnamon' );
+						elseif( is_tax() ) :
 
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'cinnamon' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'cinnamon' );
+							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
+						
+							echo $term->name;
 
 						else :
 							_e( 'Archives', 'cinnamon' );

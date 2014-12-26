@@ -271,6 +271,21 @@ function cinnamon_color_scheme_scss( $accent_color ){
 		.widgettitle{
 			color: $color__text-title;
 		}
+
+		// _jetpack
+		.single-jetpack-portfolio{
+			.entry-title{
+				color: $color__text-title;
+			}
+
+			.entry-subtitle{
+				color: $color__text-title;
+
+				a{
+					color: $color__text-title;			
+				}
+			}
+		}		
 	';
 
 	return $scss;

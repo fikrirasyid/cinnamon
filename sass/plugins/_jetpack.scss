@@ -28,3 +28,116 @@
 .contact-submit{
 	margin-top: 30px;
 }
+
+/**
+* Portfolio post type
+*/
+.tax-jetpack-portfolio-tag,
+.tax-jetpack-portfolio-type,
+.post-type-archive-jetpack-portfolio{
+	.hentry{
+		.entry-featured-image{
+			&.as-background{
+				display: block;
+				position: relative;
+				top: auto;
+				right: auto;
+				bottom: auto;
+				left: auto;
+				height: auto;
+				margin-bottom: 10px;
+				padding: 20px 20px 0;
+				background: $color__portfolio-bg;
+				line-height: .7;
+
+				&:before{
+					display: none;
+				}
+
+				img{
+					box-shadow: 0 0 6px darken( $color__portfolio-bg, 25% );
+				}
+			}
+		}
+	}
+}
+
+.single-jetpack-portfolio{
+	.entry-title{
+		@include font-size( 2.8 );
+		font-weight: bold;
+		text-align: center;
+		margin: 50px 10px 0;
+		color: $color__text-title;
+		line-height: 1.2;
+	}
+
+	.entry-subtitle{
+		@include font-size( 1.8 );
+		font-weight: lighter;
+		color: $color__text-title;
+		margin: 0 10px 30px;
+		text-align: center;
+
+		a{
+			color: $color__text-title;			
+		}
+	}
+
+	.entry-featured-image{
+		margin: 20px 0 0;
+		height: auto;
+
+		img{			
+			box-shadow: 0 0 5px darken( $color__portfolio-bg, 25% );
+		}
+	}
+}
+
+@media screen and ( min-width: $size__breakpoint-tablet ){
+	.tax-jetpack-portfolio-tag,
+	.tax-jetpack-portfolio-type,
+	.post-type-archive-jetpack-portfolio{
+		.hentry{
+			display: inline-block;
+			width: 49.5%;
+			vertical-align: top;
+			border-bottom: none;
+			padding: 33px;
+		}
+	}
+
+	.single-jetpack-portfolio{
+		.entry-title{
+			@include font-size( 3.2 );
+		}
+	}
+}
+
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	.tax-jetpack-portfolio-tag,
+	.tax-jetpack-portfolio-type,
+	.post-type-archive-jetpack-portfolio{
+		#content{
+			&:before{
+				display: none;
+			}
+		}
+
+		#primary{
+			width: $size__breakpoint-desktop;
+		}
+	}
+
+	.single-jetpack-portfolio{
+		.entry-title{
+			@include font-size( 4.2 );
+			margin-top: 150px;
+		}
+
+		.entry-subtitle{
+			@include font-size( 2.4 );
+			margin-bottom: 90px;
+		}
+	}
+}

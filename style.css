@@ -1829,9 +1829,11 @@ body {
     width: 670px;
   }
 
+  .single-jetpack-portfolio #content:before,
   .page-template-temp-one-column-page #content:before {
     display: none;
   }
+  .single-jetpack-portfolio #primary,
   .page-template-temp-one-column-page #primary {
     float: none;
     display: block;
@@ -2029,4 +2031,101 @@ object {
 
 .contact-submit {
   margin-top: 30px;
+}
+
+/**
+* Portfolio post type
+*/
+.tax-jetpack-portfolio-tag .hentry .entry-featured-image.as-background,
+.tax-jetpack-portfolio-type .hentry .entry-featured-image.as-background,
+.post-type-archive-jetpack-portfolio .hentry .entry-featured-image.as-background {
+  display: block;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 20px 20px 0;
+  background: #EFEFEF;
+  line-height: .7;
+}
+.tax-jetpack-portfolio-tag .hentry .entry-featured-image.as-background:before,
+.tax-jetpack-portfolio-type .hentry .entry-featured-image.as-background:before,
+.post-type-archive-jetpack-portfolio .hentry .entry-featured-image.as-background:before {
+  display: none;
+}
+.tax-jetpack-portfolio-tag .hentry .entry-featured-image.as-background img,
+.tax-jetpack-portfolio-type .hentry .entry-featured-image.as-background img,
+.post-type-archive-jetpack-portfolio .hentry .entry-featured-image.as-background img {
+  box-shadow: 0 0 6px #afafaf;
+}
+
+.single-jetpack-portfolio .entry-title {
+  font-size: 28px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px 10px 0;
+  color: #2d1f0f;
+  line-height: 1.2;
+}
+.single-jetpack-portfolio .entry-subtitle {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  color: #2d1f0f;
+  margin: 0 10px 30px;
+  text-align: center;
+}
+.single-jetpack-portfolio .entry-subtitle a {
+  color: #2d1f0f;
+}
+.single-jetpack-portfolio .entry-featured-image {
+  margin: 20px 0 0;
+  height: auto;
+}
+.single-jetpack-portfolio .entry-featured-image img {
+  box-shadow: 0 0 5px #afafaf;
+}
+
+@media screen and (min-width: 760px) {
+  .tax-jetpack-portfolio-tag .hentry,
+  .tax-jetpack-portfolio-type .hentry,
+  .post-type-archive-jetpack-portfolio .hentry {
+    display: inline-block;
+    width: 49.5%;
+    vertical-align: top;
+    border-bottom: none;
+    padding: 33px;
+  }
+
+  .single-jetpack-portfolio .entry-title {
+    font-size: 32px;
+    font-size: 3.2rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tax-jetpack-portfolio-tag #content:before,
+  .tax-jetpack-portfolio-type #content:before,
+  .post-type-archive-jetpack-portfolio #content:before {
+    display: none;
+  }
+  .tax-jetpack-portfolio-tag #primary,
+  .tax-jetpack-portfolio-type #primary,
+  .post-type-archive-jetpack-portfolio #primary {
+    width: 960px;
+  }
+
+  .single-jetpack-portfolio .entry-title {
+    font-size: 42px;
+    font-size: 4.2rem;
+    margin-top: 150px;
+  }
+  .single-jetpack-portfolio .entry-subtitle {
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin-bottom: 90px;
+  }
 }
