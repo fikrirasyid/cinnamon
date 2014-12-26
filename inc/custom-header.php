@@ -41,6 +41,11 @@ if ( ! function_exists( 'cinnamon_header_style' ) ) :
 function cinnamon_header_style() {
 	$header_image = get_header_image();
 
+	// Fallback to default image
+	if( ! $header_image ){
+		$header_image = get_template_directory_uri() . '/images/cinnamon-default-header.jpg';
+	}
+
 	// Header image on page and single page is defined by featured image
 	if ( is_singular() || is_page() ) {
 		return;
