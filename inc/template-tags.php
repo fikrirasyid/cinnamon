@@ -248,14 +248,14 @@ function cinnamon_comment($comment, $args, $depth) {
 		<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date*/
-				printf( __('on %1$s'), get_comment_date( 'M j, Y' ) ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  ', '' );
+				printf( __('on %1$s', 'cinnamon'), get_comment_date( 'M j, Y' ) ); ?></a><?php edit_comment_link( __( '(Edit)', 'cinnamon' ), '  ', '' );
 			?>
 		</div>
 		
 	</div>
 
 	<?php if ( $comment->comment_approved == '0' ) : ?>
-		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'cinnamon' ); ?></em>
 	<?php endif; ?>
 	
 	<div class="comment-content">
