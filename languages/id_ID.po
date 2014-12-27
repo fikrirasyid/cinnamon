@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cinnamon\n"
 "POT-Creation-Date: 2014-12-27 11:02+0700\n"
-"PO-Revision-Date: 2014-12-27 11:02+0700\n"
+"PO-Revision-Date: 2014-12-27 11:06+0700\n"
 "Last-Translator: Fikri Rasyid <fikrirasyid@gmail.com>\n"
 "Language-Team: Fikri Rasyid <fikrirasyid@gmail.com>\n"
 "Language: en\n"
@@ -10,146 +10,146 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.1\n"
-"X-Poedit-Basepath: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon\n"
+"X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x\n"
-"X-Poedit-SearchPath-0: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon\n"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/404.php:23
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Kategori Populer"
 
 #. translators: %1$s: smiley
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/404.php:40
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Coba lihat arsip bulanan. %1$s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:35
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:53
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navigasi Komentar"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:36
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:54
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; Komentar Terdahulu"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:37
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:55
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Komentar Baru &rarr;"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:65
 msgid "Comments are closed."
-msgstr ""
+msgstr "Komentar Ditutup"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/comments.php:72
 msgid "Share Your Thought"
-msgstr ""
+msgstr "Suarakan Pendapatmu"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Tidak Ditemukan"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-none.php:19
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "Siap untuk mempublikasikan tulisan pertamamu? <a href=\"%1$s\">Mulai dari sini</a>."
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some different "
 "keywords."
 msgstr ""
+"Maaf, tidak ada yang cocok dengan kata kunci pencarianmu. Coba lagi dengan kata kunci "
+"berbeda"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
+msgstr "Kami tidak menemukan apa yang kamu cari. Coba lakukan pencarian."
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-page.php:14
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content-single.php:12
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content.php:41
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/single-jetpack-portfolio.php:21
 msgid "Pages:"
-msgstr ""
+msgstr "Halaman:"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/content.php:34
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Lanjutkan membaca %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/footer.php:15
 #, php-format
 msgid "Powered by %s &amp; %s"
-msgstr ""
+msgstr "Ditenagai oleh %s &amp; %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/functions.php:45
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/header.php:33
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menu Utama"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/functions.php:84
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/header.php:24
 msgid "Skip to content"
-msgstr ""
+msgstr "Langsung ke konten"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/customizer.php:316
 msgid "Error generating color scheme. Please try again."
-msgstr ""
+msgstr "Gagal membuat skema warna. Silahkan coba lagi."
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/extras.php:70
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Halaman %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:23
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:48
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navigasi pos"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:25
 msgid "Newer stories"
-msgstr ""
+msgstr "Tulisan terbaru"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:50
 msgid "More stories"
-msgstr ""
+msgstr "Tulisan sebelumnya"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:74
 msgid "Post navigation"
-msgstr ""
+msgstr "Navigasi pos"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:77
 msgid "<span class=\"meta-label\">Previously</span>%title"
-msgstr ""
+msgstr "<span class=\"meta-label\">Sebelumnya</span>%title"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:78
 msgid "<span class=\"meta-label\">Read Next</span>%title"
-msgstr ""
+msgstr "<span class=\"meta-label\">Baca Selanjutnya</span>%title"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:105
 msgid "Posted on: "
-msgstr ""
+msgstr "Dipublikasikan pada:"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:116
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:135
 msgid ", "
-msgstr ""
+msgstr ","
 
 #. translators: 1: date
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:186
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:251
 #, php-format
 msgid "on %1$s"
-msgstr ""
+msgstr "Tentang %1$s"
 
 #. translators: used between list items, there is a space after the comma
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:206
@@ -158,78 +158,79 @@ msgstr ""
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:208
 msgid "Tagged"
-msgstr ""
+msgstr "Tag"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:214
 msgid "Leave a comment"
-msgstr ""
+msgstr "Berikan komentar"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:214
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Komentar"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:214
 msgid "% Comments"
-msgstr ""
+msgstr "% Komentar"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:245
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
-msgstr ""
+msgstr "<cite class=\"fn\">%s</cite>"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:251
 msgid "(Edit)"
-msgstr ""
+msgstr "(Edit)"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:258
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Komentar kamu sedang dimoderasi"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:396
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Penulis: %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:399
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "Hari: %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:402
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:402
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:405
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Tahun: %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:405
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:415
 msgid "Asides"
-msgstr ""
+msgstr "Catatan Pendek"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:424
 msgid "Archives"
-msgstr ""
+msgstr "Arsip"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:439
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Hasil Pencarian Untuk: %s"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:443
 msgid "Page Not Found"
-msgstr ""
+msgstr "Halaman Tidak Ditemukan"
 
 #: /Users/fmba/htdocs/fikrirasyid/wp-content/themes/cinnamon/inc/template-tags.php:444
 msgid "Nothing was found at this location. Try one of the links below or a search:"
 msgstr ""
+"Tidak ada yang ditemukan disini. Coba salah satu tautan di bawah atau lakukan pencarian:"

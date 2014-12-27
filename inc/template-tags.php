@@ -74,8 +74,8 @@ function cinnamon_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cinnamon' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav nav-previous">%link</div>', _x( '<span class="meta-label">Previously</span>%title', 'Previous post link', 'cinnamon' ) );
-				next_post_link(     '<div class="nav nav-next">%link</div>',     _x( '<span class="meta-label">Read Next</span>%title', 'Next post link',     'cinnamon' ) );
+				previous_post_link( '<div class="nav nav-previous">%link</div>', __( '<span class="meta-label">Previously</span>%title', 'cinnamon' ) );
+				next_post_link(     '<div class="nav nav-next">%link</div>',     __( '<span class="meta-label">Read Next</span>%title', 'cinnamon' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
