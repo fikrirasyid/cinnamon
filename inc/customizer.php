@@ -6,6 +6,25 @@
  */
 
 /**
+ * Safer way to check if plugin is active
+ * is_plugin_active() throws error when being used inside customize_register hook
+ * 
+ * @param string plugin file
+ * @return bool
+ */
+if( ! function_exists( 'cinnamon_is_plugin_active' ) ):
+function cinnamon_is_plugin_active( $plugin ){
+	$active_plugins = get_option( 'active_plugins' );
+
+	if( in_array( $plugin, $active_plugins ) ){
+		return true;
+	} else {
+		return false;
+	}
+}
+endif;
+
+/**
  * WordPress' native sanitize_hex_color seems to be hasn't been loaded
  * Provide theme's customizer with its own hex color sanitation
  */
@@ -34,20 +53,6 @@ function cinnamon_sanitize_hex_color_no_hash( $color ){
 endif;
 
 /**
- * Perform particular tasks on customizer init 
- */
-if( ! function_exists( 'cinnamon_customize_controls_init' ) ) :
-function cinnamon_customize_controls_init(){
-
-	// Remove color scheme previewer only on init. User will always start fresh
-	// Use saved color scheme first, then color scheme's customizer
-	remove_theme_mod( 'color_scheme_customizer' );
-
-}
-endif;
-add_action( 'customize_controls_init', 'cinnamon_customize_controls_init' );
-
-/**
  * Adding custom field for theme's customizer
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
@@ -58,17 +63,22 @@ function cinnamon_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'header_textcolor' );
 
 	// Add accent color control
-	$wp_customize->add_setting( 'accent_color', array(
-		'default'           => '#F2E6D7',
-		'sanitize_callback' => 'sanitize_hex_color',
-		'transport'			=> 'postMessage'
-	) );
+	// This option relies on Jetpack's preprocessor. Display if Jetpack is active
+	if( cinnamon_is_plugin_active( 'jetpack/jetpack.php' ) ){
+		
+		$wp_customize->add_setting( 'accent_color', array(
+			'default'           => '#F2E6D7',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'			=> 'postMessage'
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-		'label'       => esc_html__( 'Accent color', 'cinnamon' ),
-		'description' => esc_html__( 'Select one light color of your choice. Cinnamon will adjust its color scheme based on this color of choice..', 'cinnamon' ),
-		'section'     => 'colors',
-	) ) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+			'label'       => esc_html__( 'Accent color', 'cinnamon' ),
+			'description' => esc_html__( 'Select one light color of your choice. Cinnamon will adjust its color scheme based on this color of choice..', 'cinnamon' ),
+			'section'     => 'colors',
+		) ) );
+
+	}
 }
 endif;
 add_action( 'customize_register', 'cinnamon_customize_register' );
@@ -302,8 +312,9 @@ function cinnamon_customize_preview_js() {
 
 	// Attaching variables
 	wp_localize_script( 'cinnamon-customizer', 'cinnamon_customizer_params', array(
-		'generate_color_scheme_endpoint' => admin_url( 'admin-ajax.php?action=cinnamon_generate_customizer_color_scheme' ),
-		'generate_color_scheme_error_message' => __( 'Error generating color scheme. Please try again.', 'cinnamon' ),
+		'generate_color_scheme_endpoint' 		=> admin_url( 'admin-ajax.php?action=cinnamon_generate_customizer_color_scheme' ),
+		'generate_color_scheme_error_message' 	=> __( 'Error generating color scheme. Please try again.', 'cinnamon' ),
+		'clear_customizer_settings'				=> admin_url( 'admin-ajax.php?action=cinnamon_clear_customizer_settings' ),
 	) );
 
 	// Display color scheme previewer
@@ -322,26 +333,50 @@ add_action( 'customize_preview_init', 'cinnamon_customize_preview_js' );
 
 /**
  * Generate color scheme based on one accent color choosen by user
+ * This function requires Jetpack to be active
+ */
+
+/**
+ * Jetpack's preprocessor's file path
+ */
+function cinnamon_jetpack_sass_preprocessor_path(){
+	return WP_PLUGIN_DIR . '/jetpack/modules/custom-css/custom-css/preprocessors.php';
+}
+
+/**
+ * Generate color scheme based on one accent color choosen by user
+ * This function requires Jetpack to be active
  */
 if ( ! function_exists( 'cinnamon_generate_color_scheme' ) ) :
 function cinnamon_generate_color_scheme(){
-	$accent_color = get_theme_mod( 'accent_color', false );
 
-	if( $accent_color ){
+	// Only process this if Jetpack is active and jetpack preprocessors file exists
+	if( cinnamon_is_plugin_active( 'jetpack/jetpack.php') && file_exists( cinnamon_jetpack_sass_preprocessor_path() ) ) :
 
-		// Require SCSS compiler
-		require_once( dirname( __FILE__ ) . '/scss.php' );
+		$accent_color = get_theme_mod( 'accent_color', false );
 
-		// SCSS template
-		$color_scheme = cinnamon_color_scheme_scss( $accent_color );
+		if( $accent_color ){
 
-		// Compile
-		$scssc 	= new scssc();
-		$css 	= $scssc->compile( $color_scheme );
+			// SCSS template
+			$color_scheme = cinnamon_color_scheme_scss( $accent_color );
 
-		// Set Color Scheme
-		set_theme_mod( 'color_scheme', $css );
-	}
+			// Make sure that jetpack_sass_css_preprocess() exists
+			if( ! function_exists( 'jetpack_sass_css_preprocess' ) ){
+				require_once( cinnamon_jetpack_sass_preprocessor_path() );
+			}
+
+			// Generate CSS
+			$css 	= jetpack_sass_css_preprocess( $color_scheme );
+
+			// Set Color Scheme
+			set_theme_mod( 'color_scheme', $css );
+
+			// Remove Customizer Color Scheme
+			remove_theme_mod( 'color_scheme_customizer' );
+		}
+
+	endif;
+
 }
 endif;
 add_action( 'customize_save_after', 'cinnamon_generate_color_scheme' );
@@ -352,7 +387,7 @@ add_action( 'customize_save_after', 'cinnamon_generate_color_scheme' );
 if( ! function_exists( 'cinnamon_generate_customizer_color_scheme' ) ) :
 function cinnamon_generate_customizer_color_scheme(){
 
-	if( isset( $_GET['accent_color'] ) && cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] ) ){
+	if( isset( $_GET['accent_color'] ) && cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] ) && cinnamon_is_plugin_active( 'jetpack/jetpack.php' ) && file_exists( cinnamon_jetpack_sass_preprocessor_path() ) ){
 
 		// Get accent color
 		$accent_color = cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] );
@@ -361,15 +396,16 @@ function cinnamon_generate_customizer_color_scheme(){
 
 			$accent_color = '#' . $accent_color;
 
-			// Require SCSS compiler
-			require_once( dirname( __FILE__ ) . '/scss.php' );
-
 			// SCSS template
 			$color_scheme = cinnamon_color_scheme_scss( $accent_color );
 
-			// Compile
-			$scssc 	= new scssc();
-			$css 	= $scssc->compile( $color_scheme );
+			// Make sure that jetpack_sass_css_preprocess() exists
+			if( ! function_exists( 'jetpack_sass_css_preprocess' ) ){
+				require_once( cinnamon_jetpack_sass_preprocessor_path() );
+			}
+
+			// Generate CSS
+			$css 	= jetpack_sass_css_preprocess( $color_scheme );
 
 			// Set Color Scheme
 			set_theme_mod( 'color_scheme_customizer', $css );
@@ -395,3 +431,20 @@ function cinnamon_generate_customizer_color_scheme(){
 }
 endif;
 add_action( 'wp_ajax_cinnamon_generate_customizer_color_scheme', 'cinnamon_generate_customizer_color_scheme' );
+
+/**
+ * Endpoint for clearing all customizer temporary settings
+ * This is made to be triggered via JS call (upon tab is closed)
+ * 
+ * @return void
+ */
+if( ! function_exists( 'cinnamon_clear_customizer_settings' ) ) :
+function cinnamon_clear_customizer_settings(){
+	if( current_user_can( 'customize' ) ){
+		remove_theme_mod( 'color_scheme_customizer' );		
+	}
+
+	die();
+}
+endif;
+add_action( 'wp_ajax_cinnamon_clear_customizer_settings', 'cinnamon_clear_customizer_settings' );

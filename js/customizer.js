@@ -21,4 +21,9 @@
 			});
 		} );
 	} );
+
+	// Clear temporary settings if customizer is closed
+	window.addEventListener("beforeunload", function (e) {
+		$.post( cinnamon_customizer_params.clear_customizer_settings );
+	});
 } )( jQuery );
