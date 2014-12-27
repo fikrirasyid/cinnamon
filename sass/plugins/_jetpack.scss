@@ -104,6 +104,12 @@
 			vertical-align: top;
 			border-bottom: none;
 			padding: 33px;
+
+			.entry-featured-image{
+				&.as-background{
+					max-height: 300px;
+				}
+			}
 		}
 	}
 

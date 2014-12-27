@@ -2118,6 +2118,11 @@ object {
     border-bottom: none;
     padding: 33px;
   }
+  .tax-jetpack-portfolio-tag .hentry .entry-featured-image.as-background,
+  .tax-jetpack-portfolio-type .hentry .entry-featured-image.as-background,
+  .post-type-archive-jetpack-portfolio .hentry .entry-featured-image.as-background {
+    max-height: 300px;
+  }
 
   .single-jetpack-portfolio .entry-title {
     font-size: 32px;
