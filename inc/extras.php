@@ -43,6 +43,13 @@ add_filter( 'body_class', 'cinnamon_body_classes' );
  * @return string The filtered title.
  */
 function cinnamon_wp_title( $title, $sep ) {
+	/**
+	 * If this is version 4.1, directly stop the manual title modification. Let WordPress does that through add_theme_support( 'title-tag' );
+	 */
+	if( function_exists( '_wp_render_title_tag' ) ){
+		return $title;		
+	}
+
 	if ( is_feed() ) {
 		return $title;
 	}

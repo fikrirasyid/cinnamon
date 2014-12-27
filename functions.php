@@ -66,6 +66,9 @@ function cinnamon_setup() {
 		'http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
 		'editor.css'
 	) );
+
+	// Adding title tag support
+	add_theme_support( 'title-tag' );
 }
 endif; // cinnamon_setup
 add_action( 'after_setup_theme', 'cinnamon_setup' );
