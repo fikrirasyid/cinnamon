@@ -95,3 +95,10 @@ if( function_exists( 'get_the_subtitle' ) ) :
 	add_filter( 'cinnamon_posted_on', 'cinnamon_subtitles_posted_on', 10, 2 );
 
 endif;
+
+/**
+ * Removing Subtitles styling
+ */
+if ( class_exists( 'Subtitles' ) &&  method_exists( 'Subtitles', 'subtitle_styling' ) ) {
+    remove_action( 'wp_head', array( Subtitles::getInstance(), 'subtitle_styling' ) );
+}
