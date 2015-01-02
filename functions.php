@@ -153,3 +153,4 @@ require get_template_directory() . '/inc/customizer.php';
  * Third party plugins compatibility
  */
 require get_template_directory() . '/inc/plugin-compatibility-jetpack.php';
+require get_template_directory() . '/inc/plugin-compatibility-subtitles.php';
