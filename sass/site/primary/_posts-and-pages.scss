@@ -55,6 +55,10 @@
 			a{
 				font-weight: bold;
 				text-decoration: none;
+
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 
 			.edit-link{
@@ -129,6 +133,10 @@
 				font-weight: lighter;
 				text-decoration: none;
 				color: $color__text-date;
+
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 		}		
 

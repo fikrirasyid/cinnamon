@@ -1220,6 +1220,9 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+.hentry .entry-header .entry-meta a:hover {
+  text-decoration: underline;
+}
 .hentry .entry-header .entry-meta .edit-link {
   float: right;
 }
@@ -1305,6 +1308,9 @@ body {
   font-weight: lighter;
   text-decoration: none;
   color: #AFAFAF;
+}
+.hentry .entry-footer .entry-meta a:hover {
+  text-decoration: underline;
 }
 .hentry .entry-footer .posted-on {
   display: block;
