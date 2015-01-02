@@ -150,6 +150,6 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Third party plugins compatibility
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/plugin-compatibility-jetpack.php';
