@@ -26,7 +26,19 @@ global $paged;
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrap">
 			<div class="site-branding">
-				<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+				<h2 class="site-title">
+				<?php
+					if( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ){
+
+						jetpack_the_site_logo();
+
+					} else {
+
+						echo cinnamon_get_site_title();
+						
+					}
+				?>
+				</h2>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

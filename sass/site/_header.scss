@@ -15,6 +15,30 @@ body{
 		a{
 			color: $color__text-title;
 			text-decoration: none;
+			line-height:1;
+			@include clearfix;
+
+			&.site-title-text{
+				line-height: 1.8;
+			}
+
+			&.site-logo-link{
+				img{
+					margin-top: 4px;
+				}
+			}
+		}
+	}
+}
+
+.not-touch-device{
+	#masthead{
+		.site-title{
+			a.site-logo-link{
+				img{
+					margin: 6px 0;
+				}
+			}
 		}
 	}
 }

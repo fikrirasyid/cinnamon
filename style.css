@@ -993,6 +993,19 @@ body {
 #masthead .site-title a {
   color: #2d1f0f;
   text-decoration: none;
+  line-height: 1;
+  content: "";
+  display: table;
+}
+#masthead .site-title a.site-title-text {
+  line-height: 1.8;
+}
+#masthead .site-title a.site-logo-link img {
+  margin-top: 4px;
+}
+
+.not-touch-device #masthead .site-title a.site-logo-link img {
+  margin: 6px 0;
 }
 
 #site-navigation {
