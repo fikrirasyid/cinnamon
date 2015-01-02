@@ -87,7 +87,7 @@ if ( ! function_exists( 'cinnamon_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function cinnamon_posted_on() {
+function cinnamon_posted_on( $post_id = false ) {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -110,7 +110,7 @@ function cinnamon_posted_on() {
 
 	}
 
-	echo '<span class="posted-on">' . $posted_on . '</span>';
+	echo '<span class="posted-on">' . apply_filters( 'cinnamon_posted_on', $posted_on, get_the_ID() ) . '</span>';
 
 	if( is_singular() ){
 		edit_post_link( __( 'Edit', 'cinnamon' ), '<span class="edit-link">', '</span>' );
@@ -118,16 +118,13 @@ function cinnamon_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'cinnamon_entry_subtitle' ) ) :
+if( ! function_exists( 'cinnamon_get_entry_subtitle' ) ) :
 /**
- * Prints HTML "sub-title" if there's any subtitle plugin. If there's no subtitle plugin, print category elegantly (using ampersand for the last category)
+ * Get HTML "sub-title" content
  */
-function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
-
-	// If no post_id defined, assume that this is used inside the loop
-	if( ! $post_id ){
-		$post_id = get_the_ID();
-	}
+function cinnamon_get_entry_subtitle( $post_id = false ){
+	// Default subtitle value
+	$subtitle = '';
 
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type( $post_id ) && 'aside' != get_post_format( $post_id ) ) {
@@ -142,8 +139,6 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 
 		// Check category count, prepare the categories to be printed
 		if ( 2 < $categories_count ) {
-
-			$the_categories = '';
 	
 			$cat_index = 0;
 
@@ -152,19 +147,17 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 				$cat_index++;
 
 				if( $cat_index > 1 && $cat_index < $categories_count ){
-					$the_categories .= ', ';
+					$subtitle .= ', ';
 				}
 
 				if( $cat_index > 1 && $cat_index == $categories_count ){
-					$the_categories .= ', &amp; ';
+					$subtitle .= ', &amp; ';
 				}
 
-				$the_categories .= $cat;
+				$subtitle .= $cat;
 			}
 
 		} elseif( 2 == $categories_count ) {
-
-			$the_categories = '';
 	
 			$cat_index = 0;
 
@@ -173,25 +166,47 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 				$cat_index++;
 
 				if( $cat_index > 1 && $cat_index == $categories_count ){
-					$the_categories .= ' &amp; ';
+					$subtitle .= ' &amp; ';
 				}
 
-				$the_categories .= $cat;
+				$subtitle .= $cat;
 			}			
 
 		} else {
-			$the_categories = $categories;
+			$subtitle = $categories;
 		}
-
-		printf( '<h3 class="'. $class  .'">' . __( 'on %1$s', 'cinnamon' ) . '</h3>', $the_categories );
 	}
 
 	// Jetpack Portfolio
 	if( 'jetpack-portfolio' == get_post_type( $post_id ) ){
 
-		the_terms( $post_id, 'jetpack-portfolio-type', '<h3 class="'. $class .'">', ', ', '</h3>' );
+		$subtitle = get_the_term_list( $post_id, 'jetpack-portfolio-type', '', ', ', '' );
 
 	}
+
+	return $subtitle;
+}
+
+endif;
+
+if ( ! function_exists( 'cinnamon_entry_subtitle' ) ) :
+/**
+ * Prints HTML "sub-title" if there's any Subtitle plugin. If there's no subtitle plugin, print category elegantly (using ampersand for the last category)
+ */
+function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
+
+	// If no post_id defined, assume that this is used inside the loop
+	if( ! $post_id ){
+		$post_id = get_the_ID();
+	}
+
+	$subtitle = cinnamon_get_entry_subtitle( $post_id );
+
+	echo '<h3 class="'. $class  .'">';
+
+	echo apply_filters( 'cinnamon_entry_subtitle', sprintf( __( 'on %1$s', 'cinnamon' ), $subtitle ), $post_id );
+
+	echo '</h3>';	
 }
 endif;
 
