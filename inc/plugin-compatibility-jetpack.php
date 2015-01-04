@@ -26,6 +26,9 @@ function cinnamon_jetpack_setup() {
 		),
 		'size' => 'site-logo',
 	));
+
+	// Declaring jetpack responsive video support	
+    add_theme_support( 'jetpack-responsive-videos' );
 }
 endif;
 add_action( 'after_setup_theme', 'cinnamon_jetpack_setup' );
