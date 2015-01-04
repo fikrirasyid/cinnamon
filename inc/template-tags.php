@@ -6,21 +6,6 @@
  *
  * @package Cinnamon
  */
-if( ! function_exists( 'cinnamon_get_site_title' ) ) :
-/**
- * Displaying site title
- * 
- * @return string
- */
-function cinnamon_get_site_title(){	
-
-	$site_title_markup = '<a href="%s" rel="home" class="site-title-text">%s</a>';
-
-	$site_title = sprintf( $site_title_markup, esc_url( home_url( '/' ) ), get_bloginfo( 'name' ) );
-
-	return $site_title;
-}
-endif;
 
 if( ! function_exists( 'cinnamon_paging_nav_newer' ) ) :
 /**

@@ -26,18 +26,17 @@ global $paged;
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrap">
 			<div class="site-branding">
-				
 				<?php
 					if( function_exists( 'jetpack_the_site_logo' ) ){
 						jetpack_the_site_logo();
 					}
-				?> 
 
-				<h2 class="site-title">
-				<?php
-					echo cinnamon_get_site_title();
+					if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif;					
 				?>
-				</h2>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
