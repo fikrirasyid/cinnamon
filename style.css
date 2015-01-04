@@ -988,7 +988,7 @@ body {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 900;
-  padding: 15px 15px 13px;
+  padding: 17px 15px 17px;
 }
 #masthead .site-title a {
   color: #2d1f0f;
@@ -1001,11 +1001,6 @@ body {
   float: left;
   margin: 15px 15px 13px;
   line-height: 1;
-}
-
-.not-touch-device #masthead .site-title {
-  padding-top: 17px;
-  padding-bottom: 17px;
 }
 
 .has-site-logo #masthead .site-title {

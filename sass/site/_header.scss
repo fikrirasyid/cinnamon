@@ -10,7 +10,7 @@ body{
 		float:left;
 		@include font-size( 1.8 );
 		font-weight: 900;
-		padding: 15px 15px 13px;
+		padding: 17px 15px 17px;
 
 		a{
 			color: $color__text-title;
@@ -24,15 +24,6 @@ body{
 		float:left;
 		margin: 15px 15px 13px;
 		line-height: 1;
-	}
-}
-
-.not-touch-device{
-	#masthead{
-		.site-title{
-			padding-top: 17px;
-			padding-bottom: 17px;
-		}
 	}
 }
 
