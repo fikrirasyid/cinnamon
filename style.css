@@ -988,7 +988,7 @@ body {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 900;
-  padding: 10px 15px;
+  padding: 15px 15px 13px;
 }
 #masthead .site-title a {
   color: #2d1f0f;
@@ -997,15 +997,19 @@ body {
   content: "";
   display: table;
 }
-#masthead .site-title a.site-title-text {
-  line-height: 1.8;
-}
-#masthead .site-title a.site-logo-link img {
-  margin-top: 4px;
+#masthead .site-logo-link {
+  float: left;
+  margin: 15px 15px 13px;
+  line-height: 1;
 }
 
-.not-touch-device #masthead .site-title a.site-logo-link img {
-  margin: 6px 0;
+.not-touch-device #masthead .site-title {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.has-site-logo #masthead .site-title {
+  display: none;
 }
 
 #site-navigation {
@@ -1115,10 +1119,6 @@ body {
 * Tablet adjustment
 */
 @media screen and (min-width: 760px) {
-  #masthead .site-title {
-    padding-left: 35px;
-  }
-
   .page-header {
     padding: 100px 10px;
   }
