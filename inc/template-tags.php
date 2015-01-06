@@ -204,7 +204,16 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 
 	echo '<h3 class="'. $class  .'">';
 
-	echo apply_filters( 'cinnamon_entry_subtitle', sprintf( __( 'on %1$s', 'cinnamon' ), $subtitle ), $post_id );
+	// Remove the "on" at portfolio page
+	if( is_singular( 'jetpack-portfolio' ) || is_post_type_archive( 'jetpack-portfolio' ) ){
+
+		echo apply_filters( 'cinnamon_entry_subtitle', $subtitle, $post_id );
+
+	} else {
+
+		echo apply_filters( 'cinnamon_entry_subtitle', sprintf( __( 'on %1$s', 'cinnamon' ), $subtitle ), $post_id );
+
+	}
 
 	echo '</h3>';	
 }
