@@ -14,8 +14,9 @@ if ( ! function_exists( 'cinnamon_jetpack_setup' ) ):
 function cinnamon_jetpack_setup() {
 	// Declaring infinite scroll support
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'footer'    => 'page',
+		'container'	 		=> 'main',
+		'footer'    		=> 'page',
+		'posts_per_page' 	=> 10
 	) );
 
 	// Declaring site logo support
