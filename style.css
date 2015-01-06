@@ -2054,6 +2054,13 @@ object {
   }
 }
 /**
+* Infinite Scroll on Jetpack portfolio page
+*/
+.infinite-scroll.tax-jetpack-portfolio-type .jetpack-portfolio .entry-content, .infinite-scroll.post-type-archive-jetpack-portfolio .jetpack-portfolio .entry-content {
+  display: none;
+}
+
+/**
 * Contact Form
 */
 .contact-form .grunion-radio-label.radio,
