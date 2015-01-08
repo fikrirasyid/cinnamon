@@ -82,6 +82,20 @@
 	}
 }
 
+/* Jetpack Subscription Widget */
+.jetpack_subscription_widget{
+	#subscribe-email input{
+		padding: 7px 10px;
+		margin-bottom: 10px;
+	}
+
+	#subscribe-text{
+		line-height: 1.4;
+		margin-bottom: 15px;	
+		color: $color__text-light;
+	}
+}
+
 /**
 * Tablet adjustment
 */

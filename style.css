@@ -940,6 +940,17 @@ a:hover, a:focus, a:active {
   color: #ababab;
 }
 
+/* Jetpack Subscription Widget */
+.jetpack_subscription_widget #subscribe-email input {
+  padding: 7px 10px;
+  margin-bottom: 10px;
+}
+.jetpack_subscription_widget #subscribe-text {
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #ababab;
+}
+
 /**
 * Tablet adjustment
 */
