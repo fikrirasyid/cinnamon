@@ -205,7 +205,7 @@ function cinnamon_entry_subtitle( $post_id = false, $class = 'entry-subtitle' ){
 	echo '<h3 class="'. $class  .'">';
 
 	// Remove the "on" at portfolio page
-	if( is_singular( 'jetpack-portfolio' ) || is_post_type_archive( 'jetpack-portfolio' ) ){
+	if( is_singular( 'jetpack-portfolio' ) || is_singular( 'page' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) || is_post_type_archive( 'jetpack-portfolio' ) ){
 
 		echo apply_filters( 'cinnamon_entry_subtitle', $subtitle, $post_id );
 
