@@ -1371,6 +1371,26 @@ body {
 .hentry input[type="checkbox"] {
   margin-right: 5px;
 }
+.hentry .post-password-form {
+  display: block;
+  border: 1px solid #EFEFEF;
+  padding: 15px 20px 10px;
+  background: #fffefd;
+  box-shadow: inset 0 0 10px #fcf9f6;
+  line-height: 1.4;
+}
+.hentry .post-password-form label {
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.hentry .post-password-form input[type="password"] {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
 
 .byline,
 .updated:not(.published) {
