@@ -9,6 +9,18 @@
 	line-height: 1.2;
 }
 
+#comments{
+	.no-comments{
+		background: $color__secondary-bg;
+		box-shadow: inset 0 0 10px darken( $color__secondary-bg, 2% );
+		border: 1px solid $color__border;
+		padding: 12px 20px 13px;
+		line-height: 1;
+		margin: 20px;			
+		color: lighten( $color__text-main, 25% );	
+	}
+}
+
 .comment-list{
 	margin: 0;
 	border-bottom: 1px solid $color__border;
