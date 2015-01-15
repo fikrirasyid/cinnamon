@@ -287,6 +287,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   color: #2d1f0f;
 }
+.comment-content code,
+.entry-content code {
+  box-shadow: inset 0 0 1px #898989;
+  background: #fcfcfc;
+  padding: 0 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.comment-content pre code,
+.entry-content pre code {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
 .comment-content abbr, .comment-content acronym,
 .entry-content abbr,
 .entry-content acronym {
@@ -476,6 +496,24 @@ body#tinymce code, body#tinymce kbd, body#tinymce tt, body#tinymce var {
   font-size: 1.5rem;
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   color: #2d1f0f;
+}
+body#tinymce code {
+  box-shadow: inset 0 0 1px #898989;
+  background: #fcfcfc;
+  padding: 0 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+body#tinymce pre code {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 body#tinymce abbr, body#tinymce acronym {
   border-bottom: 1px dotted #666;

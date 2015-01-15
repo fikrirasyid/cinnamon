@@ -97,6 +97,22 @@
 		color: $color__text-title;
 	}
 
+	code{
+		box-shadow: inset 0 0 1px darken( $color__border, 40% );
+		background: lighten( $color__border, 5% );
+		padding: 0 3px;
+		@include border-radius( 3px );
+	}
+
+	pre{
+		code{
+			padding: 0;
+			background: transparent;
+			box-shadow: none;
+			@include border-radius( 0 );
+		}
+	}
+
 	abbr, acronym {
 		border-bottom: 1px dotted $color__border-abbr;
 		cursor: help;
