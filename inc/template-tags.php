@@ -436,10 +436,12 @@ function cinnamon_page_header(){
 					?>
 				</h1>
 				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="page-description">%s</div>', $term_description );
+					// If this isn't search result, show an optional term description.
+					if( ! is_search() ) :
+						$term_description = term_description();
+						if ( ! empty( $term_description ) ) :
+							printf( '<div class="page-description">%s</div>', $term_description );
+						endif;
 					endif;
 				?>
 
