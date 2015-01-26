@@ -89,6 +89,12 @@ add_action( 'customize_register', 'cinnamon_customize_register' );
  */
 if ( ! function_exists( 'cinnamon_color_scheme_scss' ) ) :
 function cinnamon_color_scheme_scss( $accent_color ){
+
+	// Sanitize color scheme hexacode
+	if( ! cinnamon_sanitize_hex_color( $accent_color ) ){
+		return false;
+	}
+
 	$scss = '
 		// Colors
 		$color__accent: '. $accent_color .';
@@ -359,6 +365,11 @@ function cinnamon_generate_color_scheme(){
 
 			// SCSS template
 			$color_scheme = cinnamon_color_scheme_scss( $accent_color );
+ 
+			// Bail if color scheme doesn't generate valid CSS
+			if( ! $color_scheme ){
+				return;
+			}
 
 			// Make sure that jetpack_sass_css_preprocess() exists
 			if( ! function_exists( 'jetpack_sass_css_preprocess' ) ){
