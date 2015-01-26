@@ -378,12 +378,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 1.5em;
   margin-bottom: 1em;
 }
-.comment-content ul li,
-.entry-content ul li {
+.comment-content ul ul, .comment-content ul ol, .comment-content ol ul, .comment-content ol ol,
+.entry-content ul ul,
+.entry-content ul ol,
+.entry-content ol ul,
+.entry-content ol ol {
+  margin-bottom: 0;
+}
+.comment-content ul > li,
+.entry-content ul > li {
   list-style: disc;
 }
-.comment-content ol li,
-.entry-content ol li {
+.comment-content ol > li,
+.entry-content ol > li {
   list-style: decimal;
 }
 
