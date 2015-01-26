@@ -6,7 +6,6 @@
  *
  * @package Cinnamon
  */
-global $paged;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
