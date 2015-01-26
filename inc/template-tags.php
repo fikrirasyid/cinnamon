@@ -336,7 +336,16 @@ function cinnamon_page_header(){
 				?>
 
 				<header class="page-header">
-					<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
+
+					<?php 
+						// Handling edge case where user use page as front page
+						if ( is_front_page() && get_header_image() ) : 
+					?>
+						<div class="background"></div>
+					<?php else : ?>
+						<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
+					<?php endif; ?>
+
 					<h1 class="page-title"><?php echo get_the_title( $post->ID ); ?></h1>
 					<?php cinnamon_entry_subtitle( $post->ID, 'page-description' ); ?>						
 				</header><!-- .page-header -->	

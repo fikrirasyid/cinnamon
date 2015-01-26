@@ -40,7 +40,7 @@ function cinnamon_header_style() {
 	}
 
 	// Header image on page and single page is defined by featured image
-	if ( is_singular() || is_page() ) {
+	if ( ( is_singular() || is_page() ) && ! is_front_page() ) {
 		return;
 	}
 
