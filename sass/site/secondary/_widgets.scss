@@ -21,6 +21,12 @@
 	li{
 		list-style: none;
 		margin-bottom: 3px;
+
+		li{
+			padding-left: 2em;
+			text-transform: uppercase;
+			@include font-size( 1.1 );
+		}
 	}
 
 	a{
