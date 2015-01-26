@@ -346,6 +346,24 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content ol > li {
   list-style: decimal;
 }
+.comment-content table,
+.entry-content table {
+  border-top: 1px solid #EFEFEF;
+  margin: 2em 0;
+}
+.comment-content table thead td,
+.entry-content table thead td {
+  font-weight: bold;
+  background: #fcfcfc;
+}
+.comment-content table tr td, .comment-content table th td,
+.entry-content table tr td,
+.entry-content table th td {
+  border-bottom: 1px solid #EFEFEF;
+  padding: .7em .7em .65em;
+  font-size: .9em;
+  line-height: 1.4;
+}
 
 body#tinymce {
   padding: 30px 30px 0 !important;
@@ -524,6 +542,20 @@ body#tinymce ul > li {
 }
 body#tinymce ol > li {
   list-style: decimal;
+}
+body#tinymce table {
+  border-top: 1px solid #EFEFEF;
+  margin: 2em 0;
+}
+body#tinymce table thead td {
+  font-weight: bold;
+  background: #fcfcfc;
+}
+body#tinymce table tr td, body#tinymce table th td {
+  border-bottom: 1px solid #EFEFEF;
+  padding: .7em .7em .65em;
+  font-size: .9em;
+  line-height: 1.4;
 }
 body#tinymce blockquote p {
   font-size: 21px;

@@ -393,6 +393,24 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content ol > li {
   list-style: decimal;
 }
+.comment-content table,
+.entry-content table {
+  border-top: 1px solid #EFEFEF;
+  margin: 2em 0;
+}
+.comment-content table thead td,
+.entry-content table thead td {
+  font-weight: bold;
+  background: #fcfcfc;
+}
+.comment-content table tr td, .comment-content table th td,
+.entry-content table tr td,
+.entry-content table th td {
+  border-bottom: 1px solid #EFEFEF;
+  padding: .7em .7em .65em;
+  font-size: .9em;
+  line-height: 1.4;
+}
 
 /*--------------------------------------------------------------
 3.0 Elements

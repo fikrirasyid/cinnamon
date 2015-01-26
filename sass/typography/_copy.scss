@@ -152,6 +152,27 @@
 			list-style: decimal;
 		}
 	}
+
+	table{
+		border-top: 1px solid $color__border;
+		margin: 2em 0;
+
+		thead{
+			td{
+				font-weight: bold;
+				background: lighten( $color__border, 5% );			
+			}
+		}
+
+		tr,th{
+			td{
+				border-bottom: 1px solid $color__border;
+				padding: .7em .7em .65em;
+				font-size: .9em;
+				line-height: 1.4;
+			}
+		}
+	}
 }
 
 .comment-content,
