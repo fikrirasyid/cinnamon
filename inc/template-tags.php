@@ -95,7 +95,7 @@ function cinnamon_posted_on() {
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'M j, Y' ) ),
+		esc_html( get_the_date( __( 'M j, Y', 'cinnamon' ) ) ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
