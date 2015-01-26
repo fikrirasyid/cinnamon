@@ -62,6 +62,10 @@ function cinnamon_customize_register( $wp_customize ) {
 	// Remove  header textcolor control
 	$wp_customize->remove_control( 'header_textcolor' );
 
+	// Remove display header text control
+	$wp_customize->remove_control( 'display_header_text' );
+
+
 	// Add accent color control
 	// This option relies on Jetpack's preprocessor. Display if Jetpack is active
 	if( cinnamon_is_plugin_active( 'jetpack/jetpack.php' ) ){
