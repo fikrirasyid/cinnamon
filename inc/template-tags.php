@@ -102,7 +102,7 @@ function cinnamon_posted_on() {
 
 	if( is_singular() ){
 
-		$posted_on = __( 'Posted on: ', 'cinnamon' ) . '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+		$posted_on = sprintf( __( 'Posted on %s: ', 'cinnamon' ), '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
 
 	} else {
 
