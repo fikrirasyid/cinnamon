@@ -325,7 +325,7 @@ function cinnamon_page_header(){
 	}
 
 	// Page / Singular's page header background is defined by featured image
-	if( is_singular() || is_page() ) :
+	if( is_singular() ) :
 		global $post;
 	
 		if( has_post_thumbnail( $post->ID ) ) : 
