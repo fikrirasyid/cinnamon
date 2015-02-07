@@ -48,7 +48,7 @@ function cinnamon_header_style() {
 	?>
 	<style type="text/css">
 		#page .page-header .background{
-			background: url( <?php echo $header_image; ?> ) no-repeat center center; 
+			background: url( <?php echo esc_url( $header_image ); ?> ) no-repeat center center; 
 			background-size: cover;
 		}
 	</style>

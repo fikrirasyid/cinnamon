@@ -343,7 +343,7 @@ function cinnamon_page_header(){
 					?>
 						<div class="background"></div>
 					<?php else : ?>
-						<div class="background" style="background: url( <?php echo $featured_image_url[0]; ?> ) no-repeat center center; background-size: cover;"></div>
+						<div class="background" style="background: url( <?php echo esc_url( $featured_image_url[0] ); ?> ) no-repeat center center; background-size: cover;"></div>
 					<?php endif; ?>
 
 					<h1 class="page-title"><?php echo get_the_title( $post->ID ); ?></h1>
