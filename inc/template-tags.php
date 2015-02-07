@@ -245,7 +245,7 @@ function cinnamon_comment($comment, $args, $depth) {
 			<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
 		</div>
 
-		<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date*/
 				printf( __('on %1$s', 'cinnamon'), get_comment_date( 'M j, Y' ) ); ?></a><?php edit_comment_link( __( '(Edit)', 'cinnamon' ), '  ', '' );
@@ -418,7 +418,7 @@ function cinnamon_page_header(){
 							$post_type 		= get_post_type();
 							$post_type_obj 	= get_post_type_object( $post_type );
 
-							echo $post_type_obj->labels->name;
+							echo esc_html( $post_type_obj->labels->name );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'cinnamon' );
@@ -427,7 +427,7 @@ function cinnamon_page_header(){
 
 							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
 						
-							echo $term->name;
+							echo esc_html( $term->name );
 
 						else :
 							_e( 'Archives', 'cinnamon' );
