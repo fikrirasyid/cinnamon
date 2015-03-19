@@ -16,6 +16,20 @@
 }
 
 /**
+* Infinite Scroll on Jetpack portfolio page
+*/
+.infinite-scroll{
+	&.tax-jetpack-portfolio-type,
+	&.post-type-archive-jetpack-portfolio{
+		.jetpack-portfolio{
+			.entry-content{
+				display: none;
+			}
+		}
+	}
+}
+
+/**
 * Contact Form
 */
 .contact-form{

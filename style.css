@@ -334,6 +334,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   color: #2d1f0f;
 }
+.comment-content code,
+.entry-content code {
+  box-shadow: inset 0 0 1px #898989;
+  background: #fcfcfc;
+  padding: 0 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.comment-content pre code,
+.entry-content pre code {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
 .comment-content abbr, .comment-content acronym,
 .entry-content abbr,
 .entry-content acronym {
@@ -974,6 +994,17 @@ a:hover, a:focus, a:active {
   color: #ababab;
 }
 
+/* Jetpack Subscription Widget */
+.jetpack_subscription_widget #subscribe-email input {
+  padding: 7px 10px;
+  margin-bottom: 10px;
+}
+.jetpack_subscription_widget #subscribe-text {
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #ababab;
+}
+
 /**
 * Tablet adjustment
 */
@@ -1022,11 +1053,23 @@ body {
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 900;
-  padding: 10px 15px;
+  padding: 17px 15px 17px;
 }
 #masthead .site-title a {
   color: #2d1f0f;
   text-decoration: none;
+  line-height: 1;
+  content: "";
+  display: table;
+}
+#masthead .site-logo-link {
+  float: left;
+  margin: 15px 15px 13px;
+  line-height: 1;
+}
+
+.has-site-logo #masthead .site-title {
+  display: none;
 }
 
 #site-navigation {
@@ -1136,10 +1179,6 @@ body {
 * Tablet adjustment
 */
 @media screen and (min-width: 760px) {
-  #masthead .site-title {
-    padding-left: 35px;
-  }
-
   .page-header {
     padding: 100px 10px;
   }
@@ -1254,6 +1293,9 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+.hentry .entry-header .entry-meta a:hover {
+  text-decoration: underline;
+}
 .hentry .entry-header .entry-meta .edit-link {
   float: right;
 }
@@ -1340,6 +1382,9 @@ body {
   text-decoration: none;
   color: #AFAFAF;
 }
+.hentry .entry-footer .entry-meta a:hover {
+  text-decoration: underline;
+}
 .hentry .entry-footer .posted-on {
   display: block;
   font-weight: bold;
@@ -1379,6 +1424,26 @@ body {
 .hentry input[type="radio"],
 .hentry input[type="checkbox"] {
   margin-right: 5px;
+}
+.hentry .post-password-form {
+  display: block;
+  border: 1px solid #EFEFEF;
+  padding: 15px 20px 10px;
+  background: #fffefd;
+  box-shadow: inset 0 0 10px #fcf9f6;
+  line-height: 1.4;
+}
+.hentry .post-password-form label {
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.hentry .post-password-form input[type="password"] {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .byline,
@@ -1629,6 +1694,16 @@ body {
   color: #2d1f0f;
   padding: 30px 15px;
   line-height: 1.2;
+}
+
+#comments .no-comments {
+  background: #fffefd;
+  box-shadow: inset 0 0 10px #fcf9f6;
+  border: 1px solid #EFEFEF;
+  padding: 12px 20px 13px;
+  line-height: 1;
+  margin: 20px;
+  color: #9f9e9e;
 }
 
 .comment-list {
@@ -2073,6 +2148,13 @@ object {
     width: 960px !important;
   }
 }
+/**
+* Infinite Scroll on Jetpack portfolio page
+*/
+.infinite-scroll.tax-jetpack-portfolio-type .jetpack-portfolio .entry-content, .infinite-scroll.post-type-archive-jetpack-portfolio .jetpack-portfolio .entry-content {
+  display: none;
+}
+
 /**
 * Contact Form
 */

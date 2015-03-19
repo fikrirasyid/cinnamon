@@ -63,7 +63,7 @@ function cinnamon_setup() {
 
 	// Adding editor style
 	add_editor_style( array(
-		'http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
+		'//fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
 		'editor.css'
 	) );
 
@@ -98,7 +98,7 @@ add_action( 'widgets_init', 'cinnamon_widgets_init' );
  */
 if ( ! function_exists( 'cinnamon_scripts' ) ) :
 function cinnamon_scripts() {
-	wp_enqueue_style( 'cinnamon-google-font', 'http://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic' );
+	wp_enqueue_style( 'cinnamon-google-font', '//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic' );
 	
 	wp_enqueue_style( 'cinnamon-style', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
 
@@ -150,6 +150,7 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Third party plugins compatibility
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/plugin-compatibility-jetpack.php';
+require get_template_directory() . '/inc/plugin-compatibility-subtitles.php';

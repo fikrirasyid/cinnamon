@@ -10,11 +10,27 @@ body{
 		float:left;
 		@include font-size( 1.8 );
 		font-weight: 900;
-		padding: 10px 15px;
+		padding: 17px 15px 17px;
 
 		a{
 			color: $color__text-title;
 			text-decoration: none;
+			line-height:1;
+			@include clearfix;
+		}
+	}
+
+	.site-logo-link{
+		float:left;
+		margin: 15px 15px 13px;
+		line-height: 1;
+	}
+}
+
+.has-site-logo{
+	#masthead{
+		.site-title{
+			display: none;
 		}
 	}
 }
@@ -124,12 +140,6 @@ body{
 * Tablet adjustment
 */
 @media screen and ( min-width: $size__breakpoint-tablet ){
-	#masthead{
-		.site-title{
-			padding-left: 35px;
-		}
-	}
-
 	.page-header{
 		padding: 100px 10px;
 
