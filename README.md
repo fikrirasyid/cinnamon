@@ -49,16 +49,13 @@ Here's how Cinnamon looks like:
 
 Cinnamon is made to be compatible with these plugins:
 
-### 1. Jetpack
-Cinnamon uses Sass library which is bundled with Jetpack's for generating custom color scheme. Select one color, and the rest is automatically handled.
-
-### 2. Jetpack's Infinite Scroll
+### 1. Jetpack's Infinite Scroll
 Jetpack's module for infinite scrolling functionality
 
-### 3. Jetpack's Portfolio's Post Type
+### 2. Jetpack's Portfolio's Post Type
 Jetpack's module for displaying portfolio content
 
-### 4. Civil Footnotes
+### 3. Civil Footnotes
 Adding footnote in markdown like interface
 
 ## Changelogs
