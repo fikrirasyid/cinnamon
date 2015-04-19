@@ -130,6 +130,13 @@ endif;
 add_action( 'wp_enqueue_scripts', 'cinnamon_color_scheme' );
 
 /**
+ * Load simple color adjuster library
+ */
+if( ! class_exists( 'Cinnamon_Simple_Color_Adjuster' ) ){
+	require get_template_directory() . '/inc/simple-color-adjuster.php';
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

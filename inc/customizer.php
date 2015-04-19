@@ -66,22 +66,17 @@ function cinnamon_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'display_header_text' );
 
 	// Add accent color control
-	// This option relies on Jetpack's preprocessor. Display if Jetpack is active
-	if( cinnamon_is_plugin_active( 'jetpack/jetpack.php' ) ){
-		
-		$wp_customize->add_setting( 'accent_color', array(
-			'default'           => '#F2E6D7',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'			=> 'postMessage'
-		) );
+	$wp_customize->add_setting( 'accent_color', array(
+		'default'           => '#F2E6D7',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'			=> 'postMessage'
+	) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-			'label'       => esc_html__( 'Accent color', 'cinnamon' ),
-			'description' => esc_html__( 'Select one light color of your choice. Cinnamon will adjust its color scheme based on this color of choice..', 'cinnamon' ),
-			'section'     => 'colors',
-		) ) );
-
-	}
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+		'label'       => esc_html__( 'Accent color', 'cinnamon' ),
+		'description' => esc_html__( 'Select one light color of your choice. Cinnamon will adjust its color scheme based on this color of choice..', 'cinnamon' ),
+		'section'     => 'colors',
+	) ) );
 }
 endif;
 add_action( 'customize_register', 'cinnamon_customize_register' );
@@ -90,221 +85,214 @@ add_action( 'customize_register', 'cinnamon_customize_register' );
 /**
  * Provide scss which is used for generating color schemes
  */
-if ( ! function_exists( 'cinnamon_color_scheme_scss' ) ) :
-function cinnamon_color_scheme_scss( $accent_color ){
+if ( ! function_exists( 'cinnamon_color_scheme_css' ) ) :
+function cinnamon_color_scheme_css( $accent_color ){
 
 	// Sanitize color scheme hexacode
 	if( ! cinnamon_sanitize_hex_color( $accent_color ) ){
 		return false;
 	}
 
+	// Init simple color adjuster
+	$simple_color_adjuster = new Cinnamon_Simple_Color_Adjuster;
+
+	// Setup color
+	$color__accent 			= $accent_color;
+	$color__link 			= $simple_color_adjuster->darken( $color__accent, 60 );
+	$color__link_visited 	= $simple_color_adjuster->darken( $color__accent, 50 );
+	$color__link_hover 		= $simple_color_adjuster->darken( $color__accent, 40 );
+	$color__link_shadow 	= $simple_color_adjuster->darken( $color__link, 20 );
+	$color__text_title 		= $simple_color_adjuster->darken( $color__accent, 78 );
+	$color__secondary_bg 	= $simple_color_adjuster->lighten( $color__accent, 10 );
+
 	$scss = '
-		// Colors
-		$color__accent: '. $accent_color .';
-		$color__link: darken( $color__accent, 60% );
-		$color__link-visited: darken( $color__accent, 50% );
-		$color__link-hover: darken( $color__accent, 40% );
-		$color__link-shadow: darken( $color__link, 20% );
-		$color__text-title: darken( $color__accent, 78% );
-		$color__secondary-bg: lighten( $color__accent, 10% );
+/* _header */
+body{
+	border-color: '. $color__accent .';
+}
 
-		// _header
-		body{
-			border-color: $color__accent;
-		}
+#masthead .site-title a{
+	color: '. $color__text_title .';
+}
 
-		#masthead{			
-			.site-title{
-				a{
-					color: $color__text-title;
-				}
-			}
-		}		
+#site-navigation .menu-toggle{
+	color: '. $color__text_title .';
+}
 
-		#site-navigation{
-			.menu-toggle{
-				color: $color__text-title;
-			}
-		}
+.page-header .background{
+	background: '. $color__accent .';
+}
 
-		.page-header{
-			.background{
-				background: $color__accent;
-			}
+.page-header.no-background-image .page-title,
+.page-header.no-background-image .page-description{
+	color: '. $color__text_title .';
+}
 
-			&.no-background-image{
-				.page-title,
-				.page-description{
-					color: $color__text-title;
+.page-header.no-background-image .page-title a,
+.page-header.no-background-image .page-description a{
+	color: '. $color__text_title .';			
+}
 
-					a{				
-						color: $color__text-title;
-					}
-				}
-			}
-		}
 
-		// _buttons
-		button,
-		input[type="button"],
-		input[type="reset"],
-		input[type="submit"] {
-			background: $color__link;
-			box-shadow: 0 3px 0 $color__link-shadow;
-		}
+/* _buttons */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: '. $color__link .';
+	box-shadow: 0 3px 0 '. $color__link_shadow .';
+}
 
-		button:hover,
-		input[type="button"]:hover,
-		input[type="reset"]:hover,
-		input[type="submit"]:hover {
-			background: $color__link-hover;
-		}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background: '. $color__link_hover .';
+}
 
-		button:focus,
-		input[type="button"]:focus,
-		input[type="reset"]:focus,
-		input[type="submit"]:focus,
-		button:active,
-		input[type="button"]:active,
-		input[type="reset"]:active,
-		input[type="submit"]:active {
-			background: $color__link-visited;
-		}
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background: '. $color__link_visited .';
+}
 
-		// _fields
-		input[type="text"]:focus,
-		input[type="email"]:focus,
-		input[type="url"]:focus,
-		input[type="password"]:focus,
-		input[type="search"]:focus,
-		textarea:focus {
-			border-color: $color__link;
-		}
+/* _fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	border-color: '. $color__link .';
+}
 
-		// _links
-		a{
-			color: $color__link;
+/* _links */
+a{
+	color: '. $color__link .';
+}
 
-			&:hover,
-			&:focus,
-			&:active {
-				color: $color__link-hover;
-			}
-		}
+a:hover,
+a:focus,
+a:active {
+	color: '. $color__link_hover .';
+}		
 
-		// _menus
-		.main-navigation {
-			a {
-				color: $color__text-title;
-			}
-		}
+/* _menus */
+.main-navigation a {
+	color: '. $color__text_title .';
+}
 
-		.paging-navigation{
-			a{
-				border-color: $color__link;
+.paging-navigation a{
+	border-color: '. $color__link .';
+}
 
-				&:hover{
-					border-color: $color__link-hover;
-				}
-			}
-		}
+.paging-navigation a:hover{
+	border-color: '. $color__link_hover .';
+}
 
-		// _comments 
-		#cancel-comment-reply-link,
-		.comment-reply-link{
-			&:hover{
-				border-color: $color__link;
-				color: $color__link;
-			}
 
-			&:active{
-				border-color: $color__link-visited;
-			}
-		}
+/* _comments */ 
+#cancel-comment-reply-link:hover,
+.comment-reply-link:hover{
+	border-color: '. $color__link .';
+	color: '. $color__link .';
+}
 
-		// _posts-and-pages
-		.hentry {
-			.entry-header{
-				.edit-link{
-					a{
-						border: 1px solid $color__link;
-						color: $color__link;
-					}
-				}		
-			}
+#cancel-comment-reply-link:active,
+.comment-reply-link:active{
+	border-color: '. $color__link_visited .';			
+}
 
-			.entry-title{
-				color: $color__text-title;
+/* _posts-and-pages */
+.hentry .entry-header .edit-link a{
+	border: 1px solid '. $color__link .';
+	color: '. $color__link .';
+}
 
-				a{
-					color: $color__text-title;
-				}
-			}
+.hentry .entry-title{
+	color: '. $color__text_title .';			
+}
 
-			.tags-links{
-				a{
-					color: $color__link;
-					border-color: $color__link;
-				}
-			}
-		}
+.hentry .entry-title a{
+	color: '. $color__text_title .';			
+}
 
-		// _copy 
-		.comment-content,
-		.entry-content{
-			h1{
-				color: $color__text-title;
-			}
+.hentry .tags-links a{
+	color: '. $color__link .';
+	border-color: '. $color__link .';
+}
 
-			h2{
-				color: $color__text-title;
-			}
+/* _copy */ 
+.entry-content h1,
+.comment-content h1{
+	color: '. $color__text_title .';
+}
 
-			h3{
-				color: $color__text-title;
-			}
+.entry-content h2,
+.comment-content h2{
+	color: '. $color__text_title .';
+}
 
-			h4{
-				color: $color__text-title;
-			}
+.entry-content h3,
+.comment-content h3{
+	color: '. $color__text_title .';
+}
 
-			b, strong {
-				color: $color__text-title;
-			}
+.entry-content h4,
+.comment-content h4{
+	color: '. $color__text_title .';
+}
 
-			address {
-				color: $color__text-title;
-			}
+.entry-content b, 
+.entry-content strong,
+.comment-content b, 
+.comment-content strong {
+	color: '. $color__text_title .';
+}
 
-			code, kbd, tt, var {
-				color: $color__text-title;
-			}
-		}
+.entry-content address,
+.comment-content address{
+	color: '. $color__text_title .';
+}
 
-		// _widgets 
-		#secondary{
-			background: $color__secondary-bg;
-		}
+.entry-content code, 
+.entry-content kbd, 
+.entry-content tt, 
+.entry-content var,
+.comment-content code, 
+.comment-content kbd, 
+.comment-content tt, 
+.comment-content var {
+	color: '. $color__text_title .';
+}		
 
-		.widget-title,
-		.widgettitle{
-			color: $color__text-title;
-		}
+/* _widgets */ 
+#secondary{
+	background: '. $color__secondary_bg .';
+}
 
-		// _jetpack
-		.single-jetpack-portfolio{
-			.entry-title{
-				color: $color__text-title;
-			}
+.widget-title,
+.widgettitle{
+	color: '. $color__text_title .';
+}
 
-			.entry-subtitle{
-				color: $color__text-title;
+/* _jetpack */
+.single-jetpack-portfolio .entry-title{
+	color: '. $color__text_title .';
+}
 
-				a{
-					color: $color__text-title;			
-				}
-			}
-		}		
+.single-jetpack-portfolio .entry-subtitle{
+	color: '. $color__text_title .';			
+}
+
+.single-jetpack-portfolio .entry-subtitle a{
+	color: '. $color__text_title .';			
+}
 	';
 
 	return $scss;
@@ -317,7 +305,7 @@ endif;
 if ( ! function_exists( 'cinnamon_customize_preview_js' ) ) :
 function cinnamon_customize_preview_js() {
 	// Enqueue the script
-	wp_enqueue_script( 'cinnamon-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20141215', true );
+	wp_enqueue_script( 'cinnamon-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20150412', true );
 
 	// Attaching variables
 	wp_localize_script( 'cinnamon-customizer', 'cinnamon_customizer_params', array(
@@ -342,15 +330,7 @@ add_action( 'customize_preview_init', 'cinnamon_customize_preview_js' );
 
 /**
  * Generate color scheme based on one accent color choosen by user
- * This function requires Jetpack to be active
  */
-
-/**
- * Jetpack's preprocessor's file path
- */
-function cinnamon_jetpack_sass_preprocessor_path(){
-	return WP_PLUGIN_DIR . '/jetpack/modules/custom-css/custom-css/preprocessors.php';
-}
 
 /**
  * Generate color scheme based on one accent color choosen by user
@@ -359,37 +339,24 @@ function cinnamon_jetpack_sass_preprocessor_path(){
 if ( ! function_exists( 'cinnamon_generate_color_scheme' ) ) :
 function cinnamon_generate_color_scheme(){
 
-	// Only process this if Jetpack is active and jetpack preprocessors file exists
-	if( cinnamon_is_plugin_active( 'jetpack/jetpack.php') && file_exists( cinnamon_jetpack_sass_preprocessor_path() ) ) :
+	$accent_color = get_theme_mod( 'accent_color', false );
 
-		$accent_color = get_theme_mod( 'accent_color', false );
+	if( $accent_color ){
 
-		if( $accent_color ){
+		// SCSS template
+		$css = cinnamon_color_scheme_css( $accent_color );
 
-			// SCSS template
-			$color_scheme = cinnamon_color_scheme_scss( $accent_color );
- 
-			// Bail if color scheme doesn't generate valid CSS
-			if( ! $color_scheme ){
-				return;
-			}
-
-			// Make sure that jetpack_sass_css_preprocess() exists
-			if( ! function_exists( 'jetpack_sass_css_preprocess' ) ){
-				require_once( cinnamon_jetpack_sass_preprocessor_path() );
-			}
-
-			// Generate CSS
-			$css 	= jetpack_sass_css_preprocess( $color_scheme );
-
-			// Set Color Scheme
-			set_theme_mod( 'color_scheme', $css );
-
-			// Remove Customizer Color Scheme
-			remove_theme_mod( 'color_scheme_customizer' );
+		// Bail if color scheme doesn't generate valid CSS
+		if( ! $css ){
+			return;
 		}
 
-	endif;
+		// Set Color Scheme
+		set_theme_mod( 'color_scheme', $css );
+
+		// Remove Customizer Color Scheme
+		remove_theme_mod( 'color_scheme_customizer' );
+	}
 
 }
 endif;
@@ -401,7 +368,7 @@ add_action( 'customize_save_after', 'cinnamon_generate_color_scheme' );
 if( ! function_exists( 'cinnamon_generate_customizer_color_scheme' ) ) :
 function cinnamon_generate_customizer_color_scheme(){
 
-	if( isset( $_GET['accent_color'] ) && cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] ) && cinnamon_is_plugin_active( 'jetpack/jetpack.php' ) && file_exists( cinnamon_jetpack_sass_preprocessor_path() ) ){
+	if( isset( $_GET['accent_color'] ) && cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] ) ){
 
 		// Get accent color
 		$accent_color = cinnamon_sanitize_hex_color_no_hash( $_GET['accent_color'] );
@@ -411,15 +378,7 @@ function cinnamon_generate_customizer_color_scheme(){
 			$accent_color = '#' . $accent_color;
 
 			// SCSS template
-			$color_scheme = cinnamon_color_scheme_scss( $accent_color );
-
-			// Make sure that jetpack_sass_css_preprocess() exists
-			if( ! function_exists( 'jetpack_sass_css_preprocess' ) ){
-				require_once( cinnamon_jetpack_sass_preprocessor_path() );
-			}
-
-			// Generate CSS
-			$css 	= jetpack_sass_css_preprocess( $color_scheme );
+			$css = cinnamon_color_scheme_css( $accent_color );
 
 			// Set Color Scheme
 			set_theme_mod( 'color_scheme_customizer', $css );
