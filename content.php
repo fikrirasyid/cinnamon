@@ -6,10 +6,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
-
-		<div class="entry-featured-image as-background">
-			<?php the_post_thumbnail( 'full' ); ?>			
-		</div>
+		
+		<?php if( 'jetpack-portfolio' == get_post_type() ) : ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="entry-featured-image as-background">
+				<?php the_post_thumbnail( 'full' ); ?>			
+			</a>
+		<?php else : ?>
+			<div class="entry-featured-image as-background">
+				<?php the_post_thumbnail( 'full' ); ?>			
+			</div>
+		<?php endif; ?>
 
 	<?php endif; ?>
 
