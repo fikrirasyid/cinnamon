@@ -1,0 +1,177 @@
+/*
+Theme Name: Cinnamon
+*/
+
+@import "variables-site/variables-site";
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+// Site
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	#content{
+		&:before{
+			left: 290px;
+		}
+	}
+
+	#primary{
+		float: right;
+	}
+	
+	#secondary{
+		float: right;
+		margin-left: 0;
+		margin-right: 40px;
+	}
+}
+
+// header
+#masthead{
+	.site-logo-link,
+	.site-title{
+		float: right;
+	}
+}
+
+.dashicons-menu{
+	&:before{
+		display: block;
+	}
+}
+
+#site-navigation{
+	.menu-toggle{
+		right: auto;
+		left: 15px;
+	}
+}
+
+@media screen and ( min-width: $size__breakpoint-desktop ){
+	.site-branding{
+		float: right;
+	}
+
+	.not-touch-device{
+		#site-navigation{
+			float: left;
+
+			&.main-navigation{
+				ul{
+					li{
+						&.menu-item-has-children{
+							> a{
+								position: relative;
+								padding-right: 15px;
+								padding-left: 20px;
+
+								&:after{
+									right: auto;
+									left: 0;
+								}
+							}
+						}		
+
+						li{
+							&.menu-item-has-children > a{
+								&:after{
+									right: auto;
+									left: 5px;
+									content: "\f341";
+								}
+							}
+						}	
+					}
+					
+					/**
+					* Hover state
+					*/
+					li.hovered > ul{
+						li.hovered > ul{
+							left: auto;
+							right: 178px;
+						}
+					}		
+				}
+			}
+		}
+	}
+}
+
+// Content
+.entry-content,
+.comment-content{
+	ol, ul{
+		margin-left: 0;
+		margin-right: 1.5em;
+	}
+}
+
+// Comment
+.comment-list{
+	.children{
+		margin: 0 37px 0 0;
+	}	
+}
+
+.comment-body{
+	padding-right:79px;
+	padding-left:15px;
+
+	.comment-meta,
+	.comment-author{
+		display: block;
+	}
+
+	.avatar{
+		left: auto;
+		right: 10px;
+	}
+}
+
+.pingback,
+.trackback{
+	> .comment-body{
+		padding-left: 0;
+		padding-right: 15px;
+	}
+}
+
+#reply-title{
+	padding-right: 0;
+	padding-left: 90px;
+}
+
+#cancel-comment-reply-link{
+	right: auto;
+	left: 0;
+}
+
+@media screen and ( min-width: $size__breakpoint-tablet ){
+	.comment-body{
+		padding-right:124px;
+		padding-left:33px;
+
+		.avatar{
+			left: auto;
+			right: 33px;
+		}
+	}
+
+	.pingback,
+	.trackback{
+		> .comment-body{
+			padding-right: 33px;
+			padding-left: 0;
+		}
+	}
+	
+	.comment-list{
+		.children{
+			margin-left: 0;
+			margin-right: 90px;
+		}
+	}
+}
