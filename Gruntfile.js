@@ -16,11 +16,11 @@ module.exports = function(grunt){
 	        }
 	    },
 	    clean: {
-	    	build: {
+	    	init: {
 	    		src: ['build/']
 	    	},
-	    	release: {
-	    		src: ['release/']
+	    	build: {
+	    		src: ['build/*', '!build/<%= pkg.name %>.zip']
 	    	}
 	    },
 	    copy: {
@@ -37,7 +37,7 @@ module.exports = function(grunt){
 	    compress: {
 	    	build: {
 	    		options: {
-	    			archive: 'release/<%= pkg.name %>.zip'
+	    			archive: 'build/<%= pkg.name %>.zip'
 	    		},
 	    		expand: true,
 	    		cwd: 'build/',
@@ -50,9 +50,9 @@ module.exports = function(grunt){
     grunt.registerTask('default', []);
 
     // Build task
-    grunt.registerTask( 'release', [ 
+    grunt.registerTask( 'build', [ 
     	'makepot',
-    	'clean', 
+    	'clean:init', 
     	'copy',
     	'compress:build',
     	'clean:build'
