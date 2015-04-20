@@ -62,3 +62,21 @@ Adding footnote in markdown like interface
 
 #### December 27th, 2014
 Currently in reviewing process for WordPress Theme Repository.
+
+#### January 2nd, 2015 - v1.0.2
+Fixing various aspect that should be fixed based on Theme Reviewer's suggestion
+
+#### February 9th, 2015 - v1.0.3
+Final check. Ready to hit the theme repository
+
+#### April 20th, 2015 - v1.1.0
+Quite an upgrade. Some things that are added on this version:
+
+- Use protocol relative URL to load Google Fonts
+- Adding Jetpack site logo support
+- Adding [Subtitles](https://wordpress.org/plugins/subtitles/) support
+- Use [Simple Color Adjuster](https://github.com/fikrirasyid/simple-color-adjuster) for generating color scheme. Dropping dependency to Jetpack's CSS pre-processior library
+- RTL Support
+- Fixing flashing top navigation on desktop
+- Custom font now can be filtered by translation, just in case the font isn't supporting the translated language
+- More styling details
