@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cinnamon 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-04-20 01:21:50+00:00\n"
+"POT-Creation-Date: 2015-04-20 02:16:44+00:00\n"
+"PO-Revision-Date: 2015-04-20 09:17+0700\n"
+"Last-Translator: Fikri Rasyid <fikrirasyid@gmail.com>\n"
+"Language-Team: Fikri Rasyid <fikrirasyid@gmail.com>\n"
+"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-04-20 08:51+0700\n"
-"X-Generator: Poedit 1.7.5\n"
-"Last-Translator: Fikri Rasyid <fikrirasyid@gmail.com>\n"
-"Language-Team: Fikri Rasyid <fikrirasyid@gmail.com>\n"
+"X-Generator: Poedit 1.7.6\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: id_ID\n"
 
 #: 404.php:23
 msgid "Most Used Categories"
@@ -49,9 +49,11 @@ msgid "Nothing Found"
 msgstr "Tidak Ditemukan"
 
 #: content-none.php:19
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Siap untuk mempublikasikan pos pertamamu? <a href=\"%1$s\">Mulai dari sini</a>."
+"Siap untuk mempublikasikan pos pertamamu? <a href=\"%1$s\">Mulai dari sini</"
+"a>."
 
 #: content-none.php:23
 msgid ""
@@ -63,8 +65,8 @@ msgstr ""
 
 #: content-none.php:28
 msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
-"can help."
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr "Halaman yang anda akses tidak ditemukan. Coba lakukan pencarian"
 
 #: content-page.php:14 content-single.php:12 content.php:47
@@ -81,11 +83,11 @@ msgstr "Lanjutkan membaca %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "Powered by %s &amp; %s"
 msgstr "Ditenagai oleh %s &amp; %s"
 
-#: functions.php:45 header.php:41
+#: functions.php:82 header.php:41
 msgid "Primary Menu"
 msgstr "Menu Utama"
 
-#: functions.php:84
+#: functions.php:121
 msgid "Sidebar"
 msgstr "Sidebar"
 
@@ -228,7 +230,8 @@ msgid "Page Not Found"
 msgstr "Halaman Tidak Ditemukan"
 
 #: inc/template-tags.php:479
-msgid "Nothing was found at this location. Try one of the links below or a search:"
+msgid ""
+"Nothing was found at this location. Try one of the links below or a search:"
 msgstr ""
 "Tidak ditemukan. Coba salah satu tautan dibawah ini atau lakukan pencarian:"
 
@@ -241,7 +244,8 @@ msgid "http://fikrirasy.id/portfolio/cinnamon/"
 msgstr "http://fikrirasy.id/portfolio/cinnamon/"
 
 #. Description of the plugin/theme
-msgid "Cinnamon is default-looking classic two column WordPress theme with a soul"
+msgid ""
+"Cinnamon is default-looking classic two column WordPress theme with a soul"
 msgstr "Cinnamon adalah tema dua kolom dengan tampilan klasik yang berkarakter"
 
 #. Author of the plugin/theme
@@ -261,6 +265,14 @@ msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s komentar untuk &ldquo;%2$s&rdquo;"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Lato, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:26
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr "on"
 
 #: inc/template-tags.php:435
 msgctxt "monthly archives date format"

@@ -12,6 +12,43 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
+/**
+ * Get pluggable-by-translation Google fonts' URL
+ */
+if( ! function_exists( 'cinnamon_googlefonts_url' ) ) :
+function cinnamon_googlefonts_url( $editor = false ){
+    $fonts_url = '';
+ 
+    /* Translators: If there are characters in your language that are not
+    * supported by Lato, translate this to 'off'. Do not translate
+    * into your own language.
+    */
+    $lato = _x( 'on', 'Lato font: on or off', 'cinnamon' );
+ 
+    if ( 'off' !== $lato ) {
+        $font_families = array();
+ 
+        if ( 'off' !== $lato ) {
+
+        	if( $editor ){
+        		$font_families[] = 'Lato:400,900,400italic,900italic';
+        	} else {
+	            $font_families[] = 'Lato:300,400,900,300italic,400italic,900italic';
+        	}
+        }
+
+        $query_args = array(
+            'family' => urlencode( implode( '|', $font_families ) ),
+            'subset' => urlencode( 'latin,latin-ext' ),
+        );
+ 
+        $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+    }
+ 
+    return $fonts_url;
+}
+endif;
+
 if ( ! function_exists( 'cinnamon_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -63,7 +100,7 @@ function cinnamon_setup() {
 
 	// Adding editor style
 	add_editor_style( array(
-		'//fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic',
+		cinnamon_googlefonts_url( true ),
 		'editor.css'
 	) );
 
@@ -98,7 +135,7 @@ add_action( 'widgets_init', 'cinnamon_widgets_init' );
  */
 if ( ! function_exists( 'cinnamon_scripts' ) ) :
 function cinnamon_scripts() {
-	wp_enqueue_style( 'cinnamon-google-font', '//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic' );
+	wp_enqueue_style( 'cinnamon-google-font', cinnamon_googlefonts_url() );
 	
 	wp_enqueue_style( 'cinnamon-style', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
 
