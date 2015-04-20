@@ -660,6 +660,7 @@ a:hover, a:focus, a:active {
 .main-navigation ul {
   list-style: none;
   margin: 0;
+  display: none;
 }
 .main-navigation ul ul li {
   padding-left: 30px;
@@ -704,6 +705,10 @@ a:hover, a:focus, a:active {
 /* Small menu */
 .menu-toggle,
 .main-navigation.toggled .nav-menu {
+  display: block;
+}
+.menu-toggle ul,
+.main-navigation.toggled .nav-menu ul {
   display: block;
 }
 

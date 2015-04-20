@@ -17,6 +17,7 @@
 	ul {
 		list-style: none;
 		margin: 0;
+		display: none;
 
 		ul {	
 
@@ -101,6 +102,10 @@
 .menu-toggle,
 .main-navigation.toggled .nav-menu {
 	display: block;
+
+	ul{
+		display: block;
+	}
 }
 
 /**
