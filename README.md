@@ -42,8 +42,8 @@ Here's how Cinnamon looks like:
 ![08 - Cinnamon offers one column template for page](http://fikrirasy.id/wp-content/uploads/2014/12/08-Cinnamon-offers-one-column-template-for-page.jpg)
 08 - Cinnamon offers one column template for page
 
-![09 - If you have Jetpack installed, you can change the color accent of your site (Jetpack has php-sass processor library). Even without Jetpack, you can change your header image anytime](http://fikrirasy.id/wp-content/uploads/2014/12/09-You-can-change-the-color-accent-and-header-image-to-your-liking.jpg)
-09 - If you have Jetpack installed, you can change the color accent of your site (Jetpack has php-sass processor library). Even without Jetpack, you can change your header image anytime
+![09 - You can select one color that reflects your site: Cinnamon will generate color scheme based on one color that you have chosen.](http://fikrirasy.id/wp-content/uploads/2014/12/09-You-can-change-the-color-accent-and-header-image-to-your-liking.jpg)
+09 - You can select one color that reflects your site: Cinnamon will generate color scheme based on one color that you have chosen.
 
 ## Plugin Compatibilities
 
